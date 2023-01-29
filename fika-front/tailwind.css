@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+@layer base {
+  html {
+    @apply h-full;
+  }
+
+  body {
+    letter-spacing: -0.3px;
+    @apply mx-auto h-full max-w-sm overflow-y-scroll bg-white-100 sm:bg-gray-600;
+  }
+
+  #__next {
+    @apply min-h-full bg-white-100;
+  }
+} */
