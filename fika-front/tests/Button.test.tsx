@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Button from "src/ui/Button";
+import Button from "../src/ui/Button";
 
 describe("index/Button", () => {
   it("If there is a disable value, it should be disabled.", () => {

@@ -10,5 +10,5 @@ module.exports = {
   ],
   core: { builder: "@storybook/builder-webpack5" },
   framework: "@storybook/react",
-  stories: ["stories/**/*.stories.@(j|t)s?(x)"],
+  stories: ["../stories/**/*.stories.@(j|t)s?(x)"],
 };
