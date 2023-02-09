@@ -20,7 +20,6 @@ const App = ({ Component, pageProps, router }: CustomAppProps) => {
       <DefaultSeo defaultTitle="" titleTemplate="" />
       <QueryClientProvider client={queryClient}>
         {getLayout(<Component {...pageProps} />, { pageProps, router })}
-        <Button>할로</Button>
         <ReactQueryDevtools />
       </QueryClientProvider>
     </>
