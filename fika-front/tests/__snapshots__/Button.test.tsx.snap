@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index/Button If there is a disable value, it should be disabled. 1`] = `
+<button
+  class="w-full bg-gray-100 text-gray-300"
+  disabled=""
+  type="button"
+>
+  test
+</button>
+`;
+
+exports[`index/Button The onClick function should work normally when the button is clicked. 1`] = `
+[MockFunction] {
+  "calls": [
+    [
+      SyntheticBaseEvent {
+        "_reactName": "onClick",
+        "_targetInst": null,
+        "altKey": false,
+        "bubbles": true,
+        "button": 0,
+        "buttons": 0,
+        "cancelable": true,
+        "clientX": 0,
+        "clientY": 0,
+        "ctrlKey": false,
+        "currentTarget": null,
+        "defaultPrevented": false,
+        "detail": 0,
+        "eventPhase": 3,
+        "getModifierState": [Function],
+        "isDefaultPrevented": [Function],
+        "isPropagationStopped": [Function],
+        "isTrusted": false,
+        "metaKey": false,
+        "movementX": 0,
+        "movementY": 0,
+        "nativeEvent": MouseEvent {
+          "isTrusted": false,
+        },
+        "pageX": undefined,
+        "pageY": undefined,
+        "relatedTarget": null,
+        "screenX": 0,
+        "screenY": 0,
+        "shiftKey": false,
+        "target": <button
+          class="w-full"
+          type="button"
+        >
+          test
+        </button>,
+        "timeStamp": 1675964204439,
+        "type": "click",
+        "view": [Window],
+      },
+    ],
+  ],
+  "results": [
+    {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
