@@ -13,6 +13,6 @@
   }
 
   #__next {
-    @apply min-h-full bg-white;
+    @apply min-h-full bg-main-bg-color;
   }
 }

@@ -25,6 +25,11 @@ module.exports = {
       //     base: ['16px', {fontWeight:400, lineHeight:'24px'}],
       //     body: ['14px', {fontWeight:400, lineHeight:'20px'}],
       // }
+      colors: {
+        'main-bg-color': '#11161B',
+        'page-menu-bg-color': '#171921',
+        'light-gray-text-color': '#888C9B'
+      }
     },
   },
   plugins: [],
