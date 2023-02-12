@@ -1,5 +1,6 @@
 import { ReactNode, useState } from "react";
 import Header from "src/components/common/header";
+import Menu from "src/components/common/menu";
 import Tabs from "src/components/common/tabs";
 import FormationEdit from "src/components/livePlay/FormationEdit";
 import FormationView from "src/components/livePlay/FormationView";
@@ -7,14 +8,7 @@ import Team from "src/components/livePlay/Team";
 import { NextPageWithLayout } from "src/types";
 import PlayerItem from "../../components/livePlay/PlayerItem";
 
-const teamTab = [
-  {
-    teamName: "연천FC",
-  },
-  {
-    teamName: "관악FC",
-  },
-];
+const teamTab = ["연천FC", "관악FC"];
 
 export const Player = [
   {
@@ -84,18 +78,12 @@ const LivePlay: NextPageWithLayout = () => {
 
   return (
     <>
-      <div className=" p-[30px] pb-0 bg-[#282A2C] text-white">
-        <h2 className="font-semibold text-4xl pb-[14px]">연천FC VS 관악FC</h2>
-        <p className="text-[#888C9B] pb-[32px]">
-          이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게
-          길게 적어놓으면 됨
-        </p>
-        <ul className="flex justify-center">
-          {teamTab.map((team) => {
-            return <li className="px-[34.5px] pb-[14px]">{team.teamName}</li>;
-          })}
-        </ul>
-      </div>
+      <Menu
+        title="연천FC VS 관악FC"
+        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게
+          길게 적어놓으면 됨"
+        tabItem={teamTab}
+      />
       <div className="bg-[#11161B] flex">
         <div className="왼쪽영역 py-[16px] px-[23px] w-[400px] text-white">
           <Team />
