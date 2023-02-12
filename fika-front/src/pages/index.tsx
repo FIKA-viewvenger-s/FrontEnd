@@ -4,7 +4,7 @@ import Tabs from "src/components/common/tabs";
 import { NextPageWithLayout } from "src/types";
 
 const Home: NextPageWithLayout = () => {
-  return <div className="mt-10">여기는 홈.</div>;
+  return <div className="mt-10 text-white text-[100px]">여기는 홈.</div>;
 };
 
 //공통적용될 레이아웃

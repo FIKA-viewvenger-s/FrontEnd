@@ -9,7 +9,7 @@ export interface HeaderProps {
 const Header: FC<HeaderProps> = ({ title, children }) => {
   return (
     <header className="w-full">
-      <div className="py-5 px-10 relative">
+      <div className="py-5 px-10 relative bg-white">
         <div className="text-center">{title}</div>
 
         <div className="flex absolute right-10 top-4">

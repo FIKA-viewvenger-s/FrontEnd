@@ -1,5 +1,6 @@
+import clsx from "clsx";
 import { useRouter } from "next/router";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { tabItems } from "src/constants/default";
 
 const getPathName = (item: string) => {
@@ -13,7 +14,7 @@ const getPathName = (item: string) => {
     case "이적 시장":
       return "/transfer-market";
     case "게임 매치":
-      return "/game_match";
+      return "/game-match";
     case "커뮤니티":
       return "/community";
     default:
@@ -22,19 +23,26 @@ const getPathName = (item: string) => {
 };
 
 const Tabs: FC = () => {
-  const { push } = useRouter();
+  const { push, route } = useRouter();
+  const [currentPage, setCurrentPage] = useState("홈");
 
   return (
-    <nav className=" flex justify-center">
+    <nav className=" flex justify-center bg-tab-bg-color h-13 items-center">
       <div className="mx-auto">
         {tabItems.map((item) => {
           return (
             <button
               key={item}
-              className="w-24 h-9"
+              className={clsx(
+                "w-36 h-9",
+                route === getPathName(item)
+                  ? "text-tab-selection-color"
+                  : "text-white"
+              )}
               type="button"
               onClick={() => {
                 push(getPathName(item));
+                setCurrentPage(item);
               }}
             >
               {item}
