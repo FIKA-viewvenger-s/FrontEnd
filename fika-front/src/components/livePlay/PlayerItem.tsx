@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { FC } from "react";
 
 interface Props {
@@ -24,11 +25,10 @@ const playerItem: FC<Props> = ({
     >
       <span className="bg-[#1A1C1E] max-w-[130px]">
         <img
-          className={`${
-            select === id
-              ? "w-[130px] h-[200px] object-cover transition-all"
-              : "w-[70px] h-[70px] object-cover transition-all"
-          }`}
+          className={clsx(
+            "object-cover transition-all",
+            select === id ? "w-[130px] h-[200px]" : "w-[70px] h-[70px]"
+          )}
           src={profileImg}
           alt="선수프로필이미지"
         />
