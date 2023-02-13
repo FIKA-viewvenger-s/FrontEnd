@@ -26,10 +26,28 @@ module.exports = {
       //     body: ['14px', {fontWeight:400, lineHeight:'20px'}],
       // }
       colors: {
-        'main-bg-color': '#11161B',
-        'page-menu-bg-color': '#171921',
-        'light-gray-text-color': '#888C9B'
-      }
+        "main-bg-color": "#11161B",
+        "page-menu-bg-color": "#171921",
+        "light-gray-text-color": "#888C9B",
+        "tab-selection-color": "#ADE64C",
+        "tab-bg-color": "#1C1E28",
+      },
+      height: {
+        13: "50px",
+        130.75: "523px",
+      },
+      padding: {
+        7.5: "30px",
+      },
+      width: {
+        158: "632px",
+      },
+      borderRadius: {
+        3.75: "15px",
+      },
+      fontSize: {
+        17.5: "70px",
+      },
     },
   },
   plugins: [],

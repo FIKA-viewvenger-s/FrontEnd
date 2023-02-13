@@ -1,10 +1,20 @@
 import { ReactNode } from "react";
 import Header from "src/components/common/header";
+import Menu from "src/components/common/menu";
 import Tabs from "src/components/common/tabs";
+import ManagementItem from "src/components/player-management-item/ManagementItem";
 import { NextPageWithLayout } from "src/types";
 
 const PlayerManagement: NextPageWithLayout = () => {
-  return <div className="mt-10">여기는 선수등록.</div>;
+  return (
+    <div>
+      <Menu
+        title="팀/선수 등록"
+        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게 길게 적어놓으면 됨"
+      />
+      <ManagementItem />
+    </div>
+  );
 };
 
 //공통적용될 레이아웃
