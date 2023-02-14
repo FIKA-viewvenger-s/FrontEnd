@@ -1,15 +1,21 @@
 import { ReactNode } from "react";
 import Header from "src/components/common/header";
 import Tabs from "src/components/common/tabs";
+import MainBanner from "src/components/home/MainBanner";
+import Ranking from "src/components/home/Ranking";
+import RecruitmentGame from "src/components/home/recruit-item/RecruitmentGame";
 import { NextPageWithLayout } from "src/types";
 
 const Home: NextPageWithLayout = () => {
-  return <div className="mt-10 text-white text-[100px]">여기는 홈.</div>;
+  return (
+    <div className="flex justify-center gap-8 mt-[30px]">
+      <MainBanner />
+      <RecruitmentGame />
+      <Ranking />
+    </div>
+  );
 };
 
-//공통적용될 레이아웃
-// nextjs 에서 제공하는 getLayout 사용
-// global css는 root에 tailwind.css에서 적용시켜주면됨.
 Home.getLayout = (page: ReactNode) => {
   return (
     <>
