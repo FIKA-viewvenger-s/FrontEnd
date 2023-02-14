@@ -8,6 +8,13 @@ import { useState } from "react";
 import queryClientConfig from "utils/queryClientConfig";
 import { CustomAppProps } from "src/types";
 import Button from "src/ui/Button";
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
 
 const noop = (page: ReactNode) => page;
 
@@ -16,13 +23,13 @@ const App = ({ Component, pageProps, router }: CustomAppProps) => {
   const getLayout = Component.getLayout || noop;
 
   return (
-    <>
+    <RecoilRoot>
       <DefaultSeo defaultTitle="" titleTemplate="" />
       <QueryClientProvider client={queryClient}>
         {getLayout(<Component {...pageProps} />, { pageProps, router })}
         <ReactQueryDevtools />
       </QueryClientProvider>
-    </>
+    </RecoilRoot>
   );
 };
 
