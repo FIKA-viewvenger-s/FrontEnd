@@ -23,11 +23,7 @@ const TransferMarket: NextPageWithLayout = () => {
   console.log('test', test)
   return (
     <div>
-      <Menu
-        title="이적시장"
-        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게 길게 적어놓으면 됨"
-        tabItem={tabItem}
-      />
+      
       {
         test === '1' 
         ? <PlayerItem/>
@@ -46,6 +42,11 @@ TransferMarket.getLayout = (page: ReactNode) => {
       <Header title="FIKA">
         <Tabs />
       </Header>
+      <Menu
+        title="이적시장"
+        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게 길게 적어놓으면 됨"
+        tabItem={tabItem}
+      />
       <main>{page}</main>
     </>
   );

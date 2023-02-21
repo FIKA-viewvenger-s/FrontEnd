@@ -8,10 +8,7 @@ import { NextPageWithLayout } from "src/types";
 const PlayerManagement: NextPageWithLayout = () => {
   return (
     <div>
-      <Menu
-        title="팀/선수 등록"
-        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게 길게 적어놓으면 됨"
-      />
+      
       <ManagementItem />
     </div>
   );
@@ -26,6 +23,10 @@ PlayerManagement.getLayout = (page: ReactNode) => {
       <Header title="FIKA">
         <Tabs />
       </Header>
+      <Menu
+        title="팀/선수 등록"
+        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게 길게 적어놓으면 됨"
+      />
       <main>{page}</main>
     </>
   );

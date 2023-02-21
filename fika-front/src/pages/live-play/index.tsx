@@ -8,7 +8,13 @@ import Team from "src/components/livePlay/Team";
 import { NextPageWithLayout } from "src/types";
 import PlayerItem from "../../components/livePlay/PlayerItem";
 
-const teamTab = ["연천FC", "관악FC"];
+const teamTab = [{
+  label:"연천FC",
+  value:"1",
+},{
+  label:"관악FC",
+  value:"2",
+}];
 
 export const Player = [
   {
@@ -78,12 +84,7 @@ const LivePlay: NextPageWithLayout = () => {
 
   return (
     <>
-      <Menu
-        title="연천FC VS 관악FC"
-        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게
-          길게 적어놓으면 됨"
-        tabItem={teamTab}
-      />
+      
       <div className="bg-[#11161B] flex">
         <div className="왼쪽영역 py-[16px] px-[23px] w-[400px] text-white">
           <Team />
@@ -119,6 +120,12 @@ LivePlay.getLayout = (page: ReactNode) => {
       <Header title="FIKA">
         <Tabs />
       </Header>
+      <Menu
+        title="연천FC VS 관악FC"
+        desc="이거저거 뭐 어쩌구 저쩌구 태현님이 문구 정해주실꺼임 일단 간지나게
+          길게 적어놓으면 됨"
+        tabItem={teamTab}
+      />
       <main>{page}</main>
     </>
   );

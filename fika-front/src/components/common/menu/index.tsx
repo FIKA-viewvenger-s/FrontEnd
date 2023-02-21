@@ -24,12 +24,11 @@ const Menu: FC<Props> = ({ title, desc, tabItem }) => {
   }
   return (
     <>
-      <div
-        className={clsx(
-          "bg-page-menu-bg-color p-8 mb-8",
+      <div className="bg-page-menu-bg-color">
+        <div className={clsx(
+          "p-8 mb-8 max-w-[1400px] m-auto",
           tabItem ? "pb-0" : "pb-9"
-        )}
-      >
+      )}>
         <div className="text-4xl text-white pb-6">{title}</div>
         <div className="text-lg text-light-gray-text-color mb-8">{desc}</div>
         <div className="flex justify-center">
@@ -50,6 +49,7 @@ const Menu: FC<Props> = ({ title, desc, tabItem }) => {
               </div>
             );
           })}
+          </div>
         </div>
       </div>
     </>

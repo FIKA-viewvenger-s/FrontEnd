@@ -9,7 +9,10 @@
 
   body {
     letter-spacing: -0.3px;
-    @apply mx-auto h-full w-[1400px] overflow-y-scroll bg-white sm:bg-gray-800;
+    @apply mx-auto h-full  overflow-y-scroll bg-white sm:bg-gray-800;
+  }
+  main {
+    @apply max-w-[1400px] m-auto
   }
 
   #__next {
