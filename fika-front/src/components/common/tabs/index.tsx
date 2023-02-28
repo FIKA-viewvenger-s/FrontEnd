@@ -29,6 +29,7 @@ const getPathName = (item: string) => {
 const Tabs: FC = () => {
   const { push, route } = useRouter();
   const [currentPage, setCurrentPage] = useState("홈");
+  console.log(route);
 
   return (
     <nav className=" flex justify-center bg-tab-bg-color h-13 items-center">
@@ -40,8 +41,8 @@ const Tabs: FC = () => {
               className={clsx(
                 "w-36 h-9",
                 route === getPathName(item)
-                  ? "text-tab-selection-color"
-                  : "text-white"
+                  ? " text-blue-primary font-bold"
+                  : "text-white font-medium"
               )}
               type="button"
               onClick={() => {

@@ -8,13 +8,16 @@ import Team from "src/components/livePlay/Team";
 import { NextPageWithLayout } from "src/types";
 import PlayerItem from "../../components/livePlay/PlayerItem";
 
-const teamTab = [{
-  label:"연천FC",
-  value:"1",
-},{
-  label:"관악FC",
-  value:"2",
-}];
+const teamTab = [
+  {
+    label: "연천FC",
+    value: "1",
+  },
+  {
+    label: "관악FC",
+    value: "2",
+  },
+];
 
 export const Player = [
   {
@@ -84,7 +87,6 @@ const LivePlay: NextPageWithLayout = () => {
 
   return (
     <>
-      
       <div className="bg-[#11161B] flex">
         <div className="왼쪽영역 py-[16px] px-[23px] w-[400px] text-white">
           <Team />
