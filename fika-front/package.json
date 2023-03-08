@@ -22,6 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.42.1",
+    "react-kakao-maps-sdk": "^1.1.6",
     "recoil": "^0.7.6",
     "rxjs": "^7.8.0"
   },
