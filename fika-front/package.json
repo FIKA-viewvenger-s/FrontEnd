@@ -24,7 +24,8 @@
     "react-hook-form": "^7.42.1",
     "react-kakao-maps-sdk": "^1.1.6",
     "recoil": "^0.7.6",
-    "rxjs": "^7.8.0"
+    "rxjs": "^7.8.0",
+    "tailwind-scrollbar": "^3.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.15",

@@ -1,5 +1,5 @@
 import "tailwind.css";
-
+import "../../styles/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { DefaultSeo } from "next-seo";
@@ -14,7 +14,7 @@ import {
   selector,
   useRecoilState,
   useRecoilValue,
-} from 'recoil';
+} from "recoil";
 
 const noop = (page: ReactNode) => page;
 

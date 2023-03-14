@@ -62,6 +62,48 @@ export const Player = [
     name: "황희찬",
     position: "MD",
   },
+  {
+    id: 7,
+    profileImg:
+      "https://blog.kakaocdn.net/dn/WJ908/btqB5hqMc9u/gexmVhbL0GdptqAvecZBs0/img.jpg",
+    name: "손흥민",
+    position: "MD",
+  },
+  {
+    id: 8,
+    profileImg:
+      "https://blog.kakaocdn.net/dn/WJ908/btqB5hqMc9u/gexmVhbL0GdptqAvecZBs0/img.jpg",
+    name: "김민재",
+    position: "MD",
+  },
+  {
+    id: 9,
+    profileImg:
+      "http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRZtIhTZFVOCm4H9G0eruNg6Q4Mz_REKPohhDolumqBjjJymInQxz_TgvdZdP3oVn_6",
+    name: "이운재",
+    position: "GK",
+  },
+  {
+    id: 10,
+    profileImg:
+      "https://blog.kakaocdn.net/dn/WJ908/btqB5hqMc9u/gexmVhbL0GdptqAvecZBs0/img.jpg",
+    name: "박지성",
+    position: "MD",
+  },
+  {
+    id: 11,
+    profileImg:
+      "https://kleague-admin-test.s3.ap-northeast-2.amazonaws.com/v1/player/player_20190167.png",
+    name: "조규성",
+    position: "MD",
+  },
+  {
+    id: 12,
+    profileImg:
+      "https://cphoto.asiae.co.kr/listimglink/6/2022120316482339166_1670053703.jpg",
+    name: "황희찬",
+    position: "MD",
+  },
 ];
 
 const LivePlay: NextPageWithLayout = () => {
@@ -87,10 +129,10 @@ const LivePlay: NextPageWithLayout = () => {
 
   return (
     <>
-      <div className="bg-[#11161B] flex">
-        <div className="왼쪽영역 py-[16px] px-[23px] w-[400px] text-white">
+      <div className="bg-[#11161B] flex h-[calc(100vh-114px-224px-24px)]">
+        <div className="왼쪽영역 bg-black pt-[15px] pr-[5px] mr-[24px] w-[400px] text-white rounded-[8px]">
           <Team />
-          <ul>
+          <ul className="max-h-[calc(100%-169.5px)] h-full overflow-y-scroll pr-[5px] scrollbar scrollbar-w-[10px] scrollbar-thumb-customscrollbar-thumbGray scrollbar-thumb-rounded-[8px]">
             {Player.map((player) => {
               return (
                 <PlayerItem

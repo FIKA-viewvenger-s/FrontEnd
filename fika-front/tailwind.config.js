@@ -51,6 +51,9 @@ module.exports = {
         "light-gray-text-color": "#888C9B",
         "tab-selection-color": "#ADE64C",
         "tab-bg-color": "#1C1E28",
+        customscrollbar: {
+          thumbGray: "#383d48"
+        }
       },
       height: {
         13: "50px",
@@ -73,7 +76,12 @@ module.exports = {
         caption: ['11px', { fontWeight: 600, lineHeight: '1.5' }],
         buton: ['24px', { fontWeight: 400, lineHeight: '24px' }],
       },
+
+      /** NOTE:  */
+
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 };

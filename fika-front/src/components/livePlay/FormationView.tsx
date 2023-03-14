@@ -37,7 +37,7 @@ interface Props {
 
 const FormationView: FC<Props> = ({ onSelect, select, onEdit }) => {
   return (
-    <div className="포메이션 보기 영역 flex-1 text-white sticky top-4 h-[100vh] transition-all">
+    <div className="포메이션 보기 영역 flex-1 text-white sticky top-4 transition-all">
       <div
         onClick={onEdit}
         className=" absolute right-0 top-1/2 p-[10px] bg-black/[0.6] flex flex-col justify-center items-center z-10 cursor-pointer"

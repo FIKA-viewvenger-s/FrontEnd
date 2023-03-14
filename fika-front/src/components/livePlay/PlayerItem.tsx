@@ -21,7 +21,7 @@ const playerItem: FC<Props> = ({
   return (
     <li
       onClick={onSelect.bind(null, id)}
-      className="flex items-center bg-[#282A2C] rounded-lg mb-3 cursor-pointer transition-all last:mb-0"
+      className="flex items-center bg-[#282A2C] rounded-lg mb-[5px] cursor-pointer transition-all last:mb-0"
     >
       <span className="bg-[#1A1C1E] max-w-[130px]">
         <img
