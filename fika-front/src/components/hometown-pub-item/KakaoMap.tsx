@@ -64,7 +64,7 @@ const kakaoMap = () => {
       </div>
       <Map
         center={locationState.center}
-        className="w-full h-[360px] rounded-b-[10px]"
+        className="w-full h-[295px] rounded-b-[10px]"
         level={3} // 지도의 확대 레벨
       >
         {!locationState.isLoading && (
