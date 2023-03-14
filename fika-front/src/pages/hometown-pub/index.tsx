@@ -2,17 +2,22 @@ import { ReactNode } from "react";
 import Header from "src/components/common/header";
 import Tabs from "src/components/common/tabs";
 import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
+import ParticipatePlace from "src/components/hometown-pub-item/ParticipatePlace";
+import PlusIcon from "../../assets/icon/plus.svg";
+
+/** NOTE: 다른페이지는 inner 사이즈가 1400px인데 동네 축구펍 페이지만 1024px로 작업 되어있음, why? */
 
 const HometownPub = () => {
   return (
     <div>
-      <div className="mt-10 text-white text-[100px]">HometownPub</div>
-      <div className="w-[490px] bg-white rounded-[10px]">
-        <div className="py-[21.5px] px-[25px] text-regular">
-          지도에서 응원 장소 찾기
-        </div>
-        <KakaoMap />
+      <div className="py-[15px] pr-[25px] text-right">
+        <button className="WhiteRoundButton-width-2 font-bold text-[15px] leading-[18px]">
+          새 응원 장소 만들기
+          <PlusIcon width="10" height="10" className="inline-block ml-[17px]" />
+        </button>
       </div>
+      <ParticipatePlace />
+      <KakaoMap />
     </div>
   );
 };

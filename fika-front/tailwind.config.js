@@ -54,6 +54,7 @@ module.exports = {
         customscrollbar: {
           thumbGray: "#383d48"
         }
+
       },
       height: {
         13: "50px",
@@ -75,10 +76,7 @@ module.exports = {
         medium: ['15px', { fontWeight: 400, lineHeight: '1.5' }],
         caption: ['11px', { fontWeight: 600, lineHeight: '1.5' }],
         buton: ['24px', { fontWeight: 400, lineHeight: '24px' }],
-      },
-
-      /** NOTE:  */
-
+      }
     },
   },
   plugins: [

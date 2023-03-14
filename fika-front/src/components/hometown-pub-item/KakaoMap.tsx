@@ -58,24 +58,31 @@ const kakaoMap = () => {
   }, []);
 
   return (
-    <Map
-      center={locationState.center}
-      className="w-full h-[360px] rounded-b-[10px]"
-      level={3} // 지도의 확대 레벨
-    >
-      {!locationState.isLoading && (
-        <MapMarker // 마커를 생성합니다
-          position={locationState.center}
-          draggable={true}
-        >
-          <div className="p-[5px] text-black">
-            {locationState.errMsg ? locationState.errMsg : "여기에 계신가요?!"}
-          </div>
-        </MapMarker>
-      )}
-      <ZoomControl position={7} />
-      <MapTypeControl position={2} />
-    </Map>
+    <div className="w-[490px] bg-white rounded-[10px]">
+      <div className="py-[21.5px] px-[25px] text-regular font-semibold leading-[21px]">
+        지도에서 응원 장소 찾기
+      </div>
+      <Map
+        center={locationState.center}
+        className="w-full h-[360px] rounded-b-[10px]"
+        level={3} // 지도의 확대 레벨
+      >
+        {!locationState.isLoading && (
+          <MapMarker // 마커를 생성합니다
+            position={locationState.center}
+            draggable={true}
+          >
+            <div className="p-[5px] text-black">
+              {locationState.errMsg
+                ? locationState.errMsg
+                : "여기에 계신가요?!"}
+            </div>
+          </MapMarker>
+        )}
+        <ZoomControl position={7} />
+        <MapTypeControl position={2} />
+      </Map>
+    </div>
   );
 };
 
