@@ -2,13 +2,13 @@ import { ReactNode } from "react";
 import Header from "src/components/common/header";
 import Menu from "src/components/common/menu";
 import Tabs from "src/components/common/tabs";
+import Widget from "src/components/common/widget";
 import ManagementItem from "src/components/player-management-item/ManagementItem";
 import { NextPageWithLayout } from "src/types";
 
 const PlayerManagement: NextPageWithLayout = () => {
   return (
     <div>
-      
       <ManagementItem />
     </div>
   );
@@ -22,6 +22,7 @@ PlayerManagement.getLayout = (page: ReactNode) => {
     <>
       <Header title="FIKA">
         <Tabs />
+        <Widget />
       </Header>
       <Menu
         title="팀/선수 등록"

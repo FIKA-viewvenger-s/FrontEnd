@@ -4,6 +4,7 @@ import Tabs from "src/components/common/tabs";
 import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
 import ParticipatePlace from "src/components/hometown-pub-item/ParticipatePlace";
 import PlusIcon from "../../assets/icon/plus.svg";
+import Widget from "src/components/common/widget";
 
 /** NOTE: 다른페이지는 inner 사이즈가 1400px인데 동네 축구펍 페이지만 1024px로 작업 되어있음, why? */
 
@@ -27,6 +28,7 @@ HometownPub.getLayout = (page: ReactNode) => {
     <>
       <Header title="FIKA">
         <Tabs />
+        <Widget />
       </Header>
       <main>{page}</main>
     </>

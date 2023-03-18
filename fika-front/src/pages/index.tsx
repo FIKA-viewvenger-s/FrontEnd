@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "src/components/common/header";
 import Tabs from "src/components/common/tabs";
+import Widget from "src/components/common/widget";
 import MainBanner from "src/components/home/MainBanner";
 import Ranking from "src/components/home/Ranking";
 import RecruitmentGame from "src/components/home/recruit-item/RecruitmentGame";
@@ -21,6 +22,7 @@ Home.getLayout = (page: ReactNode) => {
     <>
       <Header title="FIKA">
         <Tabs />
+        <Widget />
       </Header>
       <main>{page}</main>
     </>

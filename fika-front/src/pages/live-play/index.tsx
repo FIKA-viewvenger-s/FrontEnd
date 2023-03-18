@@ -7,6 +7,7 @@ import FormationView from "src/components/livePlay/FormationView";
 import Team from "src/components/livePlay/Team";
 import { NextPageWithLayout } from "src/types";
 import PlayerItem from "../../components/livePlay/PlayerItem";
+import Widget from "src/components/common/widget";
 
 const teamTab = [
   {
@@ -163,6 +164,7 @@ LivePlay.getLayout = (page: ReactNode) => {
     <>
       <Header title="FIKA">
         <Tabs />
+        <Widget />
       </Header>
       <Menu
         title="연천FC VS 관악FC"
