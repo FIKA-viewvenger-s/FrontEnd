@@ -8,6 +8,7 @@
   }
 
   body {
+    font-family: "Pretendard", sans-serif;
     letter-spacing: -0.3px;
     @apply mx-auto h-full  overflow-y-scroll bg-white sm:bg-gray-800;
   }

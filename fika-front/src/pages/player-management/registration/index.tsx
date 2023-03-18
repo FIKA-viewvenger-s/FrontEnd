@@ -4,6 +4,7 @@ import Header from "src/components/common/header";
 import Menu from "src/components/common/menu";
 import Tabs from "src/components/common/tabs";
 import RegistrationDialog from "src/components/player-management-item/RegistrationDialog";
+import Widget from "src/components/common/widget";
 
 const Registration = () => {
   //TODO : state => 전역관리로 변경
@@ -11,7 +12,6 @@ const Registration = () => {
 
   return (
     <div>
-      
       <RegistrationItem setOpen={setOpen} />
       {open && <RegistrationDialog setOpen={setOpen} />}
     </div>
@@ -23,6 +23,7 @@ Registration.getLayout = (page: ReactNode) => {
     <>
       <Header title="FIKA">
         <Tabs />
+        <Widget />
       </Header>
       <Menu
         title="팀등록" //변경되는값

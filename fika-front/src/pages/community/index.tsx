@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import Header from "src/components/common/header";
 import Tabs from "src/components/common/tabs";
+import Widget from "src/components/common/widget";
 
 const Community = () => {
   return (
@@ -15,6 +16,7 @@ Community.getLayout = (page: ReactNode) => {
     <>
       <Header title="FIKA">
         <Tabs />
+        <Widget />
       </Header>
       <main>{page}</main>
     </>
