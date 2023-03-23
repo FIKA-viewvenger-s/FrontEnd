@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 import Button from "src/ui/Button";
 import Input from "src/ui/form/Input";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import Search from "src/ui/icon/Search";
 import Notific from "src/ui/icon/Notific";
 import Alarm from "src/ui/icon/Alarm";
@@ -12,7 +12,12 @@ export interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ title, children }) => {
-  const { control } = useForm();
+  const { control } = useForm({
+    defaultValues: { search: "" },
+  });
+  const asd = useWatch({ name: "search", control });
+  console.log(asd);
+
   return (
     <header className="w-full bg-white ">
       <div className="py-3.5 w-full max-w-256 flex mx-auto justify-between px-10">

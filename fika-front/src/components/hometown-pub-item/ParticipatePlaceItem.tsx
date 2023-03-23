@@ -16,7 +16,7 @@ const PlaceItem: FC<propsItem> = (props) => {
       <div>
         <h3 className="text-[15px] font-medium pb-[4px]">{title}</h3>
         <p className="text-[11px] font-medium pb-[4px]">
-          <Calendar width="12" height="13" className="inline-block mr-[4px]" />
+          <Calendar width="12" height="13"  className="inline-block mr-[4px]" />
           {schedule}
         </p>
         <p className="text-[15px] font-medium pb-[4px]">{place}</p>

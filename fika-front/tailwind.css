@@ -32,3 +32,47 @@
     @apply border-2 border-black bg-[#263038] py-[11px] px-[13px] rounded-[80px] cursor-pointer;
   }
 }
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"),
+    url("./public/font/Pretendard-Bold.woff2") format("woff2"),
+    url("./public/font/Pretendard-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"),
+    url("./public/font/Pretendard-SemiBold.woff2") format("woff2"),
+    url("./public/font/Pretendard-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"),
+    url("./public/font/Pretendard-Medium.woff2") format("woff2"),
+    url("./public/font/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"),
+    url("./public/font/Pretendard-Regular.woff2") format("woff2"),
+    url("./public/font/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"),
+    url("./public/font/Pretendard-Light.woff2") format("woff2"),
+    url("./public/font/Pretendard-Light.woff") format("woff");
+}
