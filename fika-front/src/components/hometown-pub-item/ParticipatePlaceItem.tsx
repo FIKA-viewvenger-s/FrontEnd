@@ -1,6 +1,6 @@
-import LocationIcon from "../../assets/icon/location.svg";
-import Calendar from "../../assets/icon/calendar.svg";
 import { FC } from "react";
+import Calendar from "src/ui/icon/Calendar";
+import Location from "src/ui/icon/Location";
 
 interface propsItem {
   title: string;
@@ -16,16 +16,12 @@ const PlaceItem: FC<propsItem> = (props) => {
       <div>
         <h3 className="text-[15px] font-medium pb-[4px]">{title}</h3>
         <p className="text-[11px] font-medium pb-[4px]">
-          <Calendar width="12" height="13"  className="inline-block mr-[4px]" />
+          <Calendar />
           {schedule}
         </p>
         <p className="text-[15px] font-medium pb-[4px]">{place}</p>
         <p className="text-[11px] font-medium pb-[4px]">
-          <LocationIcon
-            width="10"
-            height="14"
-            className="inline-block mr-[4px]"
-          />
+          <Location />
           {location}
         </p>
       </div>
