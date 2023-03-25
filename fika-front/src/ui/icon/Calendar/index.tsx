@@ -27,9 +27,9 @@ const Calendar: FC<CalendarProps> = ({
       <path
         d="M3.6665 9.05754L5.33317 11.5575L10.3332 7.39087"
         stroke="black"
-        stroke-width="1.18966"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.18966"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

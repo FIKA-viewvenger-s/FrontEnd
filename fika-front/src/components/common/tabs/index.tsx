@@ -29,7 +29,6 @@ const getPathName = (item: string) => {
 const Tabs: FC = () => {
   const { push, route } = useRouter();
   const [currentPage, setCurrentPage] = useState("홈");
-  console.log(route);
 
   return (
     <nav className=" flex justify-center bg-tab-bg-color h-13 items-center">

@@ -2,12 +2,14 @@ import PlaceItem from "./ParticipatePlaceItem";
 
 const placeItem = [
   {
+    id: 1,
     title: "모임 제목",
     schedule: "5일 전(2/11 토)",
     place: "가게이름",
     location: "위치",
   },
   {
+    id: 2,
     title: "모임 제목",
     schedule: "5일 전(2/11 토)",
     place: "가게이름",
@@ -37,7 +39,8 @@ const ParticipatePlace = () => {
             </button>
           </div>
         )}
-        {placeItem && placeItem.map((item) => <PlaceItem {...item} />)}
+        {placeItem &&
+          placeItem.map((item) => <PlaceItem {...item} key={item.id} />)}
       </div>
     </div>
   );
