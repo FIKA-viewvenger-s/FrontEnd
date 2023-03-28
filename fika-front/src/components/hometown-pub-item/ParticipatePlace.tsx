@@ -1,3 +1,4 @@
+import Button from "src/ui/Button";
 import PlaceItem from "./ParticipatePlaceItem";
 
 const placeItem = [
@@ -31,12 +32,12 @@ const ParticipatePlace = () => {
               참여 예정인 장소가 없습니다.
               <br /> 새로운 응원 장소를 만들거나 응원 장소를 찾아보세요.
             </p>
-            <button className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 ">
+            <Button className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 ">
               응원 장소 만들기
-            </button>
-            <button className="text-white font-bold text-[15px] leading-[18px] BlackRoundButton">
+            </Button>
+            <Button className="text-white font-bold text-[15px] leading-[18px] BlackRoundButton">
               모임 찾기
-            </button>
+            </Button>
           </div>
         )}
         {placeItem &&

@@ -1,14 +1,13 @@
-import { ReactNode, useState, useRef } from "react";
+import { ReactNode, useState } from "react";
 import Header from "src/components/common/header";
 import Menu from "src/components/common/menu";
 import Tabs from "src/components/common/tabs";
-import FormationEdit from "src/components/livePlay/FormationEdit";
-import FormationView from "src/components/livePlay/FormationView";
 import Team from "src/components/livePlay/Team";
 import { NextPageWithLayout } from "src/types";
 import PlayerItem from "../../components/livePlay/PlayerItem";
 import Widget from "src/components/common/widget";
 import clsx from "clsx";
+import TacticalBoard from "src/components/livePlay/TacticalBoard";
 
 const teamTab = [
   {
@@ -110,12 +109,8 @@ export const Player = [
 
 const LivePlay: NextPageWithLayout = () => {
   const [selectePlayer, setSelectePlayer] = useState<number>();
-  const [defaultPosition, setDefaultPosition] = useState({
-    width: 0,
-    height: 0,
-  });
+
   const [edit, setEdit] = useState(false);
-  const parentRef = useRef<HTMLDivElement>(null);
 
   const selectPlayerHandler = (id: number) => {
     setSelectePlayer((prevData) => {
@@ -144,18 +139,12 @@ const LivePlay: NextPageWithLayout = () => {
             })}
           </ul>
         </div>
-        <div
-          ref={parentRef}
-          className="flex-1 text-white relative border h-full"
-        >
-          {edit ? (
-            <FormationEdit />
-          ) : (
-            <FormationView
-              onSelect={selectPlayerHandler}
-              select={selectePlayer}
-            />
-          )}
+        <div className="flex-1 text-white relative border h-full">
+          <TacticalBoard
+            edit={edit}
+            onSelect={selectPlayerHandler}
+            select={selectePlayer}
+          />
           <div>
             <div
               onClick={() => setEdit(!edit)}

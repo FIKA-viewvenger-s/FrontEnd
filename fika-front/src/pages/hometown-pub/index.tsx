@@ -5,6 +5,7 @@ import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
 import ParticipatePlace from "src/components/hometown-pub-item/ParticipatePlace";
 import Widget from "src/components/common/widget";
 import Plus from "src/ui/icon/Plus";
+import Button from "src/ui/Button";
 
 /** NOTE: 다른페이지는 inner 사이즈가 1400px인데 동네 축구펍 페이지만 1024px로 작업 되어있음, why? */
 
@@ -12,10 +13,10 @@ const HometownPub = () => {
   return (
     <div>
       <div className="py-[15px] pr-[25px] text-right">
-        <button className="WhiteRoundButton-width-2 font-bold text-[15px] leading-[18px]">
+        <Button className="WhiteRoundButton-width-2 w-max min-w-fit font-bold text-[15px] leading-[18px]">
           새 응원 장소 만들기
           <Plus />
-        </button>
+        </Button>
       </div>
       <ParticipatePlace />
       <KakaoMap />
