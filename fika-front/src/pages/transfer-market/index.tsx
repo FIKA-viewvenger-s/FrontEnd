@@ -2,8 +2,8 @@ import { ReactNode, useState } from "react";
 import Header from "src/components/common/header";
 import Tabs from "src/components/common/tabs";
 import Menu from "src/components/common/menu";
-import PlayerItem from "src/components/transfer-market-item/player-item";
-import TeamItem from "src/components/transfer-market-item/team-item";
+import PlayerItem from "src/components/transfer-market-item/PlayerItem";
+import TeamItem from "src/components/transfer-market-item/TeamItem";
 import { NextPageWithLayout } from "src/types";
 import React from "react";
 import {
