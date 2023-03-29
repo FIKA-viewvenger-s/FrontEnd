@@ -59,67 +59,67 @@ const DetailItem: FC<Props> = ({
                         <div>{team}</div>
                     </div>
                     <div style={{display: 'flex'}}>
-                        <div style={{display: 'grid'}}>
-                            <div style={{display: 'flex', width: '270px'}}>
+                        <div style={{display: 'grid', width: '270px'}}>
+                            <div style={{display: 'flex', gap: '20px'}}>
                                 <div style={{display: 'grid'}}>
                                     <div>포지션</div>
                                     <div>{position}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>지역</div>
+                                    <div>{region}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>티어</div>
+                                    <div>{tier}</div>
                                 </div>
                             </div>
-                            <div style={{display: 'flex', width: '270px'}}>
+                            <div style={{display: 'flex', gap: '20px'}}>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>연령</div>
+                                    <div>{age}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>승률</div>
+                                    <div>{winningRate}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>매너정보</div>
+                                    <div>{manner}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>응답률</div>
+                                    <div>{responseRate}</div>
                                 </div>
                             </div>
                         </div>
-                        <div style={{display: 'grid'}}>
-                            <div style={{display: 'flex', width: '270px'}}>
+                        <div style={{display: 'grid' , width: '204px'}}>
+                            <div style={{display: 'flex', gap: '20px'}}>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>슈팅스탯</div>
+                                    <div>{shooting}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>드리블스탯</div>
+                                    <div>{dribble}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>피지컬스탯</div>
+                                    <div>{physical}</div>
                                 </div>
                             </div>
-                            <div style={{display: 'flex', width: '204px'}}>
+                            <div style={{display: 'flex', gap: '20px'}}>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>패싱스탯</div>
+                                    <div>{passing}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>수비스탯</div>
+                                    <div>{defense}</div>
                                 </div>
                                 <div style={{display: 'grid'}}>
-                                    <div>포지션</div>
-                                    <div>{position}</div>
+                                    <div>골키핑스탯</div>
+                                    <div>{keeping}</div>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,6 @@ const DetailItem: FC<Props> = ({
                 </div>
             </div>
         </div>
-        )
       </div>
     </nav>
   );
