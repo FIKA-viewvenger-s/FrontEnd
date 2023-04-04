@@ -1,40 +1,68 @@
 import clsx from "clsx";
 import { FC, useState, Dispatch, SetStateAction } from "react";
+import {
+  FieldPath,
+  FieldValues,
+  UseControllerProps,
+  useController,
+} from "react-hook-form";
 
-interface SelectProps {
-  widthProp?: string;
-  option: {
-    label: string;
-    value: number;
-  }[];
-  setter: Dispatch<SetStateAction<string>>;
-}
 /**
  * @param {string} widthProp string 타입의 selectbox width크기 (기본값 = 100%)
  * @param {SelectProps.option} option option 타입의 selectbox에서 사용할 option 내용
  * @param {Dispatch<SetStateAction<string>>} setter Dispatch<SetStateAction<string>> 타입의 selectbox에서 옵션을 선택
  * @returns selectbox의 크기와 옵션 내용을 props로 받아서 selectbox를 구성하고, setter를 통해 선택한 option을 반환
  */
-const Select: FC<SelectProps> = ({ widthProp = "100%", option, setter }) => {
-  const [open, setOpen] = useState(false);
-  const [selectValue, setSelectValue] = useState("선택");
 
-  const selectHandler = (option: string) => {
-    setOpen(false);
-    setSelectValue(option);
-    setter(option);
-  };
+export interface SelectProps<
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+> extends UseControllerProps<TFieldValues, TName> {
+  widthProp?: string;
+  option: {
+    label: string;
+    value: number;
+  }[];
+}
+
+const Select = <
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+>(
+  props: SelectProps<TFieldValues, TName>
+) => {
+  const {
+    widthProp = "100%",
+    option,
+    control,
+    defaultValue,
+    name,
+    ...rest
+  } = props;
+
+  const {
+    field: { onChange, value, ...field },
+    fieldState: { error },
+  } = useController({
+    control,
+    defaultValue,
+    name,
+  });
+
+  const [open, setOpen] = useState(false);
 
   return (
     <div
       className={`relative cursor-pointer z-10`}
       style={{ width: `${widthProp}` }}
+      {...rest}
+      {...field}
     >
       <div
         className=" border border-[#CED4DA] rounded-[3px] py-[10px] px-[8px] text-[14px] text-[#868E96] leading-[20px] font-normal"
         onClick={() => setOpen(!open)}
       >
-        {selectValue}
+        {value}
       </div>
       <ul
         className={clsx(
@@ -45,7 +73,10 @@ const Select: FC<SelectProps> = ({ widthProp = "100%", option, setter }) => {
         {option.map((option) => (
           <li
             className="py-[6px] px-[16px] cursor-pointer"
-            onClick={() => selectHandler(option.label)}
+            onClick={() => {
+              setOpen(false);
+              onChange(option.label);
+            }}
             key={option.value}
           >
             {option.label}

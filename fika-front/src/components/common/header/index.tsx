@@ -16,7 +16,6 @@ const Header: FC<HeaderProps> = ({ title, children }) => {
     defaultValues: { search: "" },
   });
   const asd = useWatch({ name: "search", control });
-  console.log(asd);
 
   return (
     <header className="w-full bg-white ">
