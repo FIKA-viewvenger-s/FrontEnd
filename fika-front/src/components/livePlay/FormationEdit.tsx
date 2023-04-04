@@ -2,6 +2,7 @@ import { useState, useReducer, useEffect } from "react";
 import { formationCollection } from "src/constants/formationCollection";
 import Select from "src/ui/form/Select";
 import Formation from "./Formation";
+import { useForm, useWatch } from "react-hook-form";
 
 const startingLineUp = [
   {
@@ -147,21 +148,23 @@ const formationReducer = (
 };
 
 const FormationEdit = () => {
-  const [selectOption, setSelectOption] = useState("4-3-3");
   const [formation, formationDispatch] = useReducer(
     formationReducer,
     formationCollection[433]
   );
 
+  const { control } = useForm({ defaultValues: { select: "전체" } }); //TODO : defaultValues 수정필요
+  const select = useWatch({ name: "select", control });
+
   useEffect(() => {
-    formationDispatch({ type: selectOption });
-  }, [selectOption]);
+    formationDispatch({ type: select });
+  }, [select]);
 
   return (
     <div className="h-full bg-[url(https://assets.fut.gg/files/assets/field.4bc3691b65be1cd2.webp)] bg-cover bg-center">
       <div className="h-[inherit] relative">
         <div>
-          <Select option={selectBoxOption} setter={setSelectOption} />
+          <Select control={control} name="select" option={selectBoxOption} />
         </div>
         <Formation player={startingLineUp} formation={formation} />
       </div>
