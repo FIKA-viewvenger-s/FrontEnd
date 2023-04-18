@@ -23,11 +23,11 @@ module.exports = {
       },
       colors: {
         blue: {
-          primary: "#5C85EC",
-          hover: "#3862CD",
-          80: "#3862CD",
-          90: "#3862CD",
-          100: "#3862CD",
+          primary: "#6172EE",
+          hover: "#4E5ED4",
+          80: "#6172EE",
+          90: "#4E5ED4",
+          100: "#3243AE",
         },
         gray: {
           10: "#F4F7FB",

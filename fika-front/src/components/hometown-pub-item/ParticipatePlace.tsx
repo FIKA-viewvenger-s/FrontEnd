@@ -1,5 +1,8 @@
 import Button from "src/ui/Button";
 import PlaceItem from "./ParticipatePlaceItem";
+import { useState } from "react";
+import clsx from "clsx";
+import Chevrondown from "../../ui/icon/Chevrondown";
 
 const placeItem = [
   {
@@ -19,13 +22,34 @@ const placeItem = [
 ];
 
 const ParticipatePlace = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsExpanded(!isExpanded);
+  };
   return (
     <div className="w-[490px] bg-white rounded-[10px] mb-[20px]">
-      <div className="py-[21.5px] px-[25px] text-regular font-semibold leading-[21px]">
-        내가 참여 예정인 장소
+      <div className="flex justify-between px-[25px] py-[21.5px]">
+        <div className="text-regular font-semibold leading-[21px]">
+          내가 참여 예정인 장소
+        </div>
+        <button
+          onClick={toggleAccordion}
+          className={clsx(
+            " transition-all",
+            isExpanded ? "-rotate-180" : "rotate-0"
+          )}
+        >
+          <Chevrondown></Chevrondown>
+        </button>
       </div>
       {/* TODO: 캐러셀 적용하기 */}
-      <div className="pt-[13px] pb-[19px] px-[20px]">
+      <div
+        className={clsx(
+          " px-[20px] accordion-content",
+          isExpanded && "accordion-is-expanded"
+        )}
+      >
         {!placeItem && (
           <div className="text-center py-[13px] px-[20px]">
             <p className="text-[15px font-medium leading-[1.5] pb-[19px]">

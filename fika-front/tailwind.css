@@ -31,6 +31,15 @@
   .BlackRoundButton {
     @apply border-2 border-black bg-[#263038] py-[11px] px-[13px] rounded-[80px] cursor-pointer;
   }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+  }
+  .accordion-is-expanded {
+    max-height: 1000px;
+    transition: 0.4s ease-in-out;
+  }
 }
 
 @font-face {
