@@ -1,5 +1,6 @@
 import Button from "src/ui/Button";
 import PlaceItem from "./ParticipatePlaceItem";
+import CarouselTeamLogo from "./CarouselTeamLogo";
 import { useState } from "react";
 import clsx from "clsx";
 
@@ -67,15 +68,22 @@ const PlaceList = () => {
         })}
       </div>
       {/* TODO: 캐러셀 적용하기 */}
-      <div className="w-full p-3 flex overflow-hidden max-w-[490px]">
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2">전체</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2">전체</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2">전체</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2">전체</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2">전체</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2">전체</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2">전체</div>
-      </div>
+      {/* <div className="w-full p-3 flex overflow-x-auto max-w-[490px] gap-2">
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체0</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체1</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체2</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체3</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체4</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체5</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체6</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체7</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체8</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체9</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체10</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체11</div>
+        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체12</div>
+      </div> */}
+      <CarouselTeamLogo/>
       <div>
         {!placeItem && (
           <div className="text-center py-[13px] px-[20px]">
