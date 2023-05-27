@@ -21,12 +21,12 @@ const HometownPub = () => {
         </Button>
       </div>
       <MainBoard />
-      <div className="flex justify-between gap-11">      
+      <div className="flex justify-between gap-11">
+        <PlaceList />
         <div>
           <ParticipatePlace />
           <KakaoMap />
         </div>
-        <PlaceList />
       </div>
     </div>
   );

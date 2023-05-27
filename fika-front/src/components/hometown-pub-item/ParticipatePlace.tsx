@@ -1,23 +1,39 @@
 import Button from "src/ui/Button";
-import PlaceItem from "./ParticipatePlaceItem";
+import ParticipatePlaceItem from "./ParticipatePlaceItem";
 import { useState } from "react";
 import clsx from "clsx";
 import Chevrondown from "../../ui/icon/Chevrondown";
 
+import placeImg from "../../assets/images/img.png";
+import profile01 from "../../assets/images/profile01.jpg";
+import profile02 from "../../assets/images/profile02.jpg";
+import profile03 from "../../assets/images/profile03.jpg";
+import profile04 from "../../assets/images/profile04.jpg";
+
 const placeItem = [
   {
     id: 1,
+    placeImg: placeImg,
     title: "모임 제목",
-    schedule: "5일 전(2/11 토)",
+    schedule: "2월 27일 오후 10시(토)",
     place: "가게이름",
     location: "위치",
+    profileImg: [profile01, profile02, profile03, profile04],
+    tag: ["태그1", "태그2", "태그3"],
+    Participants: "12",
+    maxParticipants: "30",
   },
   {
     id: 2,
+    placeImg: placeImg,
     title: "모임 제목",
-    schedule: "5일 전(2/11 토)",
+    schedule: "2월 27일 오후 10시(토)",
     place: "가게이름",
     location: "위치",
+    profileImg: [profile01, profile02, profile03, profile04],
+    tag: ["태그1", "태그2", "태그3"],
+    Participants: "12",
+    maxParticipants: "30",
   },
 ];
 
@@ -28,8 +44,8 @@ const ParticipatePlace = () => {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div className="w-[490px] bg-white rounded-[10px] mb-[20px]">
-      <div className="flex justify-between px-[25px] py-[21.5px]">
+    <div className="w-[490px] bg-white rounded-[10px] px-[25px] mb-[20px]">
+      <div className="flex justify-between  py-[21.5px]">
         <div className="text-regular font-semibold leading-[21px]">
           내가 참여 예정인 장소
         </div>
@@ -46,7 +62,7 @@ const ParticipatePlace = () => {
       {/* TODO: 캐러셀 적용하기 */}
       <div
         className={clsx(
-          " px-[20px] accordion-content",
+          "accordion-content",
           isExpanded && "accordion-is-expanded"
         )}
       >
@@ -65,7 +81,13 @@ const ParticipatePlace = () => {
           </div>
         )}
         {placeItem &&
-          placeItem.map((item) => <PlaceItem {...item} key={item.id} />)}
+          placeItem.map((item) => (
+            <ParticipatePlaceItem
+              {...item}
+              buttonValue="채팅방 입장"
+              key={item.id}
+            />
+          ))}
       </div>
     </div>
   );

@@ -4,24 +4,39 @@ import CarouselTeamLogo from "./CarouselTeamLogo";
 import { useState } from "react";
 import clsx from "clsx";
 
+import placeImg from "../../assets/images/img.png";
+import profile01 from "../../assets/images/profile01.jpg";
+import profile02 from "../../assets/images/profile02.jpg";
+import profile03 from "../../assets/images/profile03.jpg";
+import profile04 from "../../assets/images/profile04.jpg";
+
 const placeItem = [
   {
     id: 1,
+    placeImg: placeImg,
     title: "모임 제목",
-    schedule: "5일 전(2/11 토)",
-    place: "가게이름",
+    schedule: "2월 27일 오후 10시(토)",
+    // place: "가게이름",
     location: "위치",
+    profileImg: [profile01, profile02, profile03, profile04],
+    tag: ["태그1", "태그2", "태그3"],
+    Participants: "12",
+    maxParticipants: "30",
   },
   {
     id: 2,
+    placeImg: placeImg,
     title: "모임 제목",
-    schedule: "5일 전(2/11 토)",
-    place: "가게이름",
+    schedule: "2월 27일 오후 10시(토)",
+    // place: "가게이름",
     location: "위치",
+    profileImg: [profile01, profile02, profile03, profile04],
+    tag: ["태그1", "태그2", "태그3"],
+    Participants: "12",
+    maxParticipants: "30",
   },
 ];
 const menu = ["PL", "라리가", "분데스리가", "세리에A", "리그1", "선택안함"];
-
 
 const PlaceList = () => {
   const [selectMenu, setSelectMenu] = useState("전체");
@@ -36,7 +51,7 @@ const PlaceList = () => {
       <div className="justify-between px-[25px] py-[22px]">
         <div className="text-regular font-semibold leading-[21px] text-black">
           <button className="mr-1 rounded-full px-4 py-3 bg-gray-20 text-gray-70">
-              국내 축구
+            국내 축구
           </button>
           <button className="rounded-full px-4 py-3  bg-gray-bg text-white">
             해외 축구
@@ -83,7 +98,7 @@ const PlaceList = () => {
         <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체11</div>
         <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체12</div>
       </div> */}
-      <CarouselTeamLogo/>
+      <CarouselTeamLogo />
       <div>
         {!placeItem && (
           <div className="text-center py-[13px] px-[20px]">
@@ -100,7 +115,9 @@ const PlaceList = () => {
           </div>
         )}
         {placeItem &&
-          placeItem.map((item) => <PlaceItem {...item} key={item.id} />)}
+          placeItem.map((item) => (
+            <PlaceItem {...item} buttonValue="참여하기" key={item.id} />
+          ))}
       </div>
     </div>
   );

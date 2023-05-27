@@ -1,3 +1,5 @@
+const { transform } = require("typescript")
+
 module.exports = {
   content: ["src/**/*.@(j|t)s?(x)", "stories/**/*.@(j|t)s?(x)"],
   theme: {
