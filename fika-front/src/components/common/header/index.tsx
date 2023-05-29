@@ -19,11 +19,11 @@ const Header: FC<HeaderProps> = ({ title, children }) => {
 
   return (
     <header className="w-full bg-white ">
-      <div className="py-3.5 w-full max-w-256 flex mx-auto justify-between px-10">
-        <div className="text-center ml-6.25 text-gray-100 text-[25px] font-bold">
+      <div className=" w-full max-w-256 flex mx-auto justify-between py-[14px] px-[25px] items-center">
+        <div className="text-center text-gray-100 text-[18px] font-bold">
           {title}
         </div>
-        <div>
+        {/* <div>
           <div className="text-black w-105">
             <Input
               name="search"
@@ -33,11 +33,11 @@ const Header: FC<HeaderProps> = ({ title, children }) => {
               control={control}
             />
           </div>
-        </div>
+        </div> */}
         <div className="flex justify-center gap-3.75 items-center cursor-pointer">
-          <Notific />
+          <Search />
           <Alarm />
-          <div className="rounded-[50%] w-8.5 h-8.5 bg-gray-20"></div>
+          <div className="rounded-[50%] w-6 h-6 bg-gray-20"></div>
         </div>
       </div>
       {children}

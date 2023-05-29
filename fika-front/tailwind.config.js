@@ -44,7 +44,7 @@ module.exports = {
           100: "#263038",
           bg: "#1C1E28",
         },
-        "main-bg-color": "#11161B",
+        "main-bg-color": "#f3f5f8",
         "page-menu-bg-color": "#171921",
         "light-gray-text-color": "#888C9B",
         "tab-selection-color": "#ADE64C",
