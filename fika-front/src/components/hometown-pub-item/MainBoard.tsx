@@ -52,7 +52,7 @@ const MainBoard = () => {
             <div className="flex justify-center">
               {init.map((itme) => {
                 return (
-                  <div className="font-medium text-[15px] px-8 py-1.5 text-gray-70 border-r border-gray-30">
+                  <div className="font-medium text-[14px] w-full px-4 py-1.5 text-gray-70 border-r border-gray-30">
                     {itme}
                   </div>
                 );
@@ -71,7 +71,7 @@ const MainBoard = () => {
             </div>
           </div>
 
-          <div className="flex">
+          <div className="flex border-b border-t border-b-gray-20">
             {menu.map((item) => {
               return (
                 <>
@@ -99,14 +99,13 @@ const MainBoard = () => {
           {state.map((item) => {
             return (
               <div
-                className={clsx(
-                  "py-2 text-gray-70 font-medium text-[15px] border-b border-b-gray-20"
-                )}
+                className={clsx("py-2 text-gray-70 font-medium text-[15px] ")}
               >
                 <div className="flex justify-between">
-                  <div className="flex">
+                  <div className="flex items-center">
                     <div className="px-4 py-3">00:00</div>
-                    <div className="px-4 py-3">경기장 이름</div>
+
+                    <div>{item}</div>
                   </div>
                   <div className="flex items-center">
                     {item !== "종료" ? (
@@ -135,7 +134,6 @@ const MainBoard = () => {
                       />
                       <div>1</div>
                     </div>
-                    <div>{item}</div>
                     <div className="flex gap-2.5 items-center ml-5">
                       <div>1</div>
                       <Image
@@ -163,7 +161,7 @@ const MainBoard = () => {
                       <div className="w-[146px]" />
                     )}
                   </div>
-                  {item === "경기전" ? (
+                  {/* {item === "경기전" ? (
                     <div className="px-4 rounded-full border-black border flex justify-center items-center">
                       <div className="text-black font-semibold text-[12px]">
                         새 응원 장소 만들기
@@ -172,7 +170,7 @@ const MainBoard = () => {
                     </div>
                   ) : (
                     <div className="w-[150px]" />
-                  )}
+                  )} */}
                 </div>
               </div>
             );
