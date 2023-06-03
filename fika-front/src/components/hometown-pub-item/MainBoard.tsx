@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ChevronUp from "src/ui/icon/ChevronUp";
 import Plus from "src/ui/icon/Plus";
+import Link from "next/link";
 
 const init = [
   "02일(화요일)",
@@ -109,7 +110,8 @@ const MainBoard = () => {
                   </div>
                   <div className="flex items-center">
                     {item !== "종료" ? (
-                      <button
+                      <Link
+                        href={`hometown-pub/recruiting/${48293}`}
                         className={clsx(
                           "bg-gray-10 px-4 py-[7px] border rounded-[5px]",
                           item === "경기중"
@@ -120,7 +122,7 @@ const MainBoard = () => {
                         {item === "경기중"
                           ? "응원 중인 장소 2곳"
                           : "응원 예정 장소 1곳"}
-                      </button>
+                      </Link>
                     ) : (
                       <div className="w-[146px]" />
                     )}

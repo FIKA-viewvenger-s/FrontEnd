@@ -42,7 +42,7 @@ const PlaceList = () => {
   const [selectMenu, setSelectMenu] = useState("전체");
 
   return (
-    <div className="w-full max-w-[490px] bg-white rounded-[10px] mb-[20px]">
+    <div className="w-full max-w-[490px] bg-white rounded-[10px] pb-[20px]">
       <div className="justify-between px-[25px] py-[21.5px]">
         <div className="text-regular font-semibold leading-[21px] text-black">
           응원 장소 찾기
