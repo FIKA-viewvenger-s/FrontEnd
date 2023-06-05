@@ -9,6 +9,7 @@ import profile01 from "../../assets/images/profile01.jpg";
 import profile02 from "../../assets/images/profile02.jpg";
 import profile03 from "../../assets/images/profile03.jpg";
 import profile04 from "../../assets/images/profile04.jpg";
+import Link from "next/link";
 
 const placeItem = [
   {
