@@ -1,37 +1,31 @@
 import Button from "src/ui/Button";
 import clsx from "clsx";
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import Carousel from "react-elastic-carousel";
+
+
+const breakPoints = [
+  { width: 1, itemsToShow: 5 },
+  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 768, itemsToShow: 3 },
+  { width: 1200, itemsToShow: 4 }
+];
 
 const CarouselTeamLogo = () => {
-
-  const moveLeft = () => {
-    document.getElementById("content").scrollLeft -= 400;
-  }
-
-  const moveRight = () => {
-    document.getElementById("content").scrollLeft += 400;
-  }
+  const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
 
   return (
   <div>
-    <button onClick={moveLeft} className="text-black">{"<"}</button>
-    <button onClick={moveRight} className="text-black">{">"}</button>
-    <div id="content" className="carousel w-full p-3 flex overflow-x-auto gap-2"> 
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체0</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체1</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체2</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체3</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체4</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체5</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체6</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체7</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체8</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체9</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체10</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체11</div>
-      <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체12</div>
+      <hr className="seperator" />
+      <div className="carousel-wrapper">
+        <Carousel breakPoints={breakPoints} className="h-[100px]">
+          {items.map((item) => (
+            <div className="w-[50px] h-[50px] border">{item}</div>
+          ))}
+        </Carousel>
+      </div>
     </div>
-  </div>
-    
   );
 };
 
