@@ -31,17 +31,17 @@ const userInfo = [
 
 const ChattingRoom = () => {
   return (
-    <div className="flex flex-col	justify-center items-center">
+    <div className="flex flex-col	justify-center items-center mt-[35px] p-[20px] h-[500px] overflow-auto scrollbar-hide">
       {userInfo?.map((item) => 
         item.sender === item.user 
-        ? <div className="w-[900px] m-[10px] bg-[#00bfb6] p-[20px] text-center font-black text-[#fff] relative 
+        ? <div className="w-[900px] m-[30px] bg-[#00bfb6] p-[20px] text-center font-black text-[#fff] relative 
             before:content-[''] before:w-[0px] before:h-[0px] before:absolute before:border-l-[10px] before:border-r-[10px] 
             before:border-t-[10px] before:border-b-[10px] before:right-[-20px] before:top-[6px] 
             before:border-r-transparent before:border-b-transparent before:border-l-[#00bfb6] before:border-t-[#00bfb6]"
           >
             {item.messages}
           </div>
-        : <div className="w-[900px] m-[10px] bg-[#00bfb6] p-[20px] text-center font-black text-[#fff] relative 
+        : <div className="w-[900px] m-[30px] bg-[#00bfb6] p-[20px] text-center font-black text-[#fff] relative 
             before:content-[''] before:w-[0px] before:h-[0px] before:absolute before:border-l-[10px] before:border-r-[10px] 
             before:border-t-[10px] before:border-b-[10px] before:left-[-20px] before:top-[6px] 
             before:border-l-transparent before:border-b-transparent before:border-r-[#00bfb6] before:border-t-[#00bfb6]"
