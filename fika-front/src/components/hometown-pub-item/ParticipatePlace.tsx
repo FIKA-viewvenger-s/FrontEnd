@@ -63,7 +63,7 @@ const ParticipatePlace = () => {
       {/* TODO: 캐러셀 적용하기 */}
       <div
         className={clsx(
-          "accordion-content",
+          "accordion-content ",
           isExpanded && "accordion-is-expanded"
         )}
       >

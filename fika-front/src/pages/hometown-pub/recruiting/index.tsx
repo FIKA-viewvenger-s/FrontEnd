@@ -20,7 +20,7 @@ const Recruiting = () => {
       </div>
       <div className="flex justify-between gap-11">
         <PlaceList />
-        <div>
+        <div className="h-full">
           <KakaoMap />
         </div>
       </div>

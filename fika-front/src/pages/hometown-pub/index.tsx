@@ -36,7 +36,7 @@ const HometownPub = () => {
       <MainBoard />
       <div className="flex justify-between gap-11">
         <PlaceList />
-        <div>
+        <div className="flex flex-col">
           <ParticipatePlace />
           <KakaoMap />
         </div>
