@@ -9,12 +9,16 @@ import Plus from "src/ui/icon/Plus";
 import Button from "src/ui/Button";
 import MainBoard from "src/components/hometown-pub-item/MainBoard";
 import Cross from "src/ui/icon/Cross";
+import { useRouter } from "next/router";
 
 const Recruiting = () => {
+  const router = useRouter();
   return (
     <div>
       <div className="flex justify-between py-5">
-        <div>뒤로</div>
+        <div className="cursor-pointer" onClick={() => router.back()}>
+          &lt;
+        </div>
         <div>2020.00.00 경기명</div>
         <div></div>
       </div>
