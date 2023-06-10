@@ -109,3 +109,54 @@ img {
     color-scheme: dark;
   }
 }
+
+.rec.rec-carousel {
+  position: relative;
+}
+
+.rec.rec-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  width: 20px;
+  height: 20px;
+  line-height: 10px;
+  min-width: auto;
+  font-size: 14px;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.rec.rec-arrow:hover,
+.rec.rec-arrow:focus {
+  background: #fff !important;
+  color: #333 !important;
+  background-color: #fff !important;
+  box-shadow: 0 0 2px 0 #333;
+}
+
+.rec.rec-arrow:disabled {
+  opacity: 0;
+}
+
+.rec.rec-arrow-left {
+  left: 5%;
+}
+.rec.rec-arrow-right {
+  right: 5%;
+}
+
+.rec.rec-dot {
+  width: 10px;
+  height: 10px;
+  background: #cdcdcd;
+  border: none;
+  box-shadow: none;
+}
+.rec.rec-dot_active {
+  background: #9c9c9c;
+}
+.rec.rec-pagination {
+  margin-top: 0;
+}
