@@ -11,9 +11,9 @@ const ChevronUp = ({ rotate = "rotate(0)" }: { rotate?: string }) => {
       <path
         d="M0.75 7.5L7 1.25L13.25 7.5"
         stroke="black"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
