@@ -4,18 +4,8 @@ import { useState } from "react";
 import ChevronUp from "src/ui/icon/ChevronUp";
 import Plus from "src/ui/icon/Plus";
 import Link from "next/link";
-
-const init = [
-  "02일(화요일)",
-  "03일(수요일)",
-  "04일(목요일)",
-  "05일(금요일)",
-  "06일(토요일)",
-  "07일(일요일)",
-  "08일(월요일)",
-  "09일(화요일)",
-  "10일(수요일)",
-];
+import WeeklyCalendar from "./WeeklyCalendar";
+import { subMonths, format, addMonths } from "date-fns";
 
 const menu = ["전체", "PL", "라리가", "분데스리가", "세리에A", "리그1"];
 const state = ["종료", "경기중", "경기전"];
@@ -23,6 +13,15 @@ const state = ["종료", "경기중", "경기전"];
 const MainBoard = () => {
   const [showBoard, setShowBoard] = useState(true);
   const [selectMenu, setSelectMenu] = useState("전체");
+  const [currentMonths, setCurrentMonths] = useState(new Date());
+
+  const handlePrevMonths = () => {
+    setCurrentMonths((prevMonths) => subMonths(prevMonths, 1));
+  };
+
+  const handleNextMonths = () => {
+    setCurrentMonths((prevMonths) => addMonths(prevMonths, 1));
+  };
 
   return (
     <div
@@ -38,7 +37,12 @@ const MainBoard = () => {
         )}
       >
         <div className="font-bold text-[18px] text-black">경기 일정</div>
-        <div className="font-bold text-[25px] text-black">2023.05</div>
+        <button onClick={handlePrevMonths}>지난달</button>
+        <div className="font-bold text-[25px] text-black">
+          {format(currentMonths, "yyyy.LL")}
+        </div>
+        <button onClick={handleNextMonths}>다음달</button>
+
         <button
           className="w-7 h-7 flex justify-center items-center"
           onClick={() => setShowBoard((state) => !state)}
@@ -49,17 +53,10 @@ const MainBoard = () => {
 
       {showBoard && (
         <>
-          <div className="py-5">
-            <div className="flex justify-center">
-              {init.map((itme) => {
-                return (
-                  <div className="font-medium text-[14px] w-full px-4 py-1.5 text-gray-70 border-r border-gray-30">
-                    {itme}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <WeeklyCalendar
+            currentMonths={currentMonths}
+            setCurrentMonths={setCurrentMonths}
+          />
 
           <div className="py-2">
             <div className="flex">
@@ -77,6 +74,7 @@ const MainBoard = () => {
               return (
                 <>
                   <button
+                    key={item}
                     onClick={() => setSelectMenu(item)}
                     className={clsx(
                       "px-4 pt-3 bg-none text-gray-70 font-medium text-[15px]",
@@ -100,6 +98,7 @@ const MainBoard = () => {
           {state.map((item) => {
             return (
               <div
+                key={item}
                 className={clsx("py-2 text-gray-70 font-medium text-[15px] ")}
               >
                 <div className="flex justify-between">
