@@ -114,6 +114,10 @@ img {
   position: relative;
 }
 
+.rec.rec-slider-container {
+  margin: 0;
+}
+
 .rec.rec-arrow {
   position: absolute;
   top: 50%;
@@ -141,10 +145,10 @@ img {
 }
 
 .rec.rec-arrow-left {
-  left: 5%;
+  left: 3%;
 }
 .rec.rec-arrow-right {
-  right: 5%;
+  right: 3%;
 }
 
 .rec.rec-dot {

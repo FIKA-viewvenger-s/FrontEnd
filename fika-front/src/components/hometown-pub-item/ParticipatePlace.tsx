@@ -99,7 +99,7 @@ const ParticipatePlace = () => {
   );
 
   return (
-    <div className="w-[490px] bg-white rounded-[10px] px-[25px] pb-[20px] mb-[20px]">
+    <div className="w-[490px] bg-white rounded-[10px] px-[25px] mb-[20px]">
       <div className="flex justify-between  py-[21.5px]">
         <div className="text-regular font-semibold leading-[21px]">
           내가 참여 예정인 장소
