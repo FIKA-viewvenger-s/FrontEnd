@@ -3,6 +3,8 @@ import Calendar from "src/ui/icon/Calendar";
 import Location from "src/ui/icon/Location";
 import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface propsItem {
   placeImg: StaticImageData;
@@ -15,6 +17,7 @@ interface propsItem {
   Participants: string;
   maxParticipants: string;
   buttonValue: string;
+  URL?: string;
 }
 
 const ParticipatePlaceItem: FC<propsItem> = ({
@@ -28,7 +31,20 @@ const ParticipatePlaceItem: FC<propsItem> = ({
   Participants,
   maxParticipants,
   buttonValue,
+  URL,
 }) => {
+  const router = useRouter();
+
+  // TODO: 단일 책임 원칙에 어긋남, 다른 방법 생각해서 변경하기
+  const clickHandler = (URL: string) => {
+    if (URL) {
+      router.push(URL);
+    } else {
+      console.log("참여하기");
+      return false;
+    }
+  };
+
   return (
     <div className="flex justify-between  pt-[12px] px-[10px] border rounded-[8px] mb-[13px] ">
       <div className="flex flex-col gap-[8px] grow">
@@ -85,7 +101,10 @@ const ParticipatePlaceItem: FC<propsItem> = ({
               {Participants}/{maxParticipants}명 참여
             </div>
           </div>
-          <button className="font-semibold text-[14px] leading-[18px] text-white bg-blue-primary py-3 px-4 rounded-[100px]">
+          <button
+            className="font-semibold text-[14px] leading-[18px] text-white bg-blue-primary py-3 px-4 rounded-[100px]"
+            onClick={() => clickHandler(URL)}
+          >
             {buttonValue}
           </button>
         </div>

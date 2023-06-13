@@ -25,6 +25,7 @@ interface PlaceItem {
   tag: string[];
   Participants: string;
   maxParticipants: string;
+  URL: string;
 }
 
 const places: PlaceItem[] = [
@@ -39,6 +40,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
   {
     id: 2,
@@ -51,6 +53,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
   {
     id: 3,
@@ -63,6 +66,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
   {
     id: 4,
@@ -75,6 +79,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
 ];
 
@@ -138,9 +143,11 @@ const ParticipatePlace = () => {
           {groupedPlaces.map((group, index) => (
             <div className="slide w-full" key={`item-${index}`}>
               {group.map((item) => (
-                <Link href={`hometown-pub/chatroom/${111}`} key={item.id}>
-                  <ParticipatePlaceItem {...item} buttonValue="채팅방 입장" />
-                </Link>
+                <ParticipatePlaceItem
+                  {...item}
+                  key={item.id}
+                  buttonValue="채팅방 입장"
+                />
               ))}
             </div>
           ))}
