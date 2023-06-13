@@ -25,6 +25,7 @@ interface PlaceItem {
   tag: string[];
   Participants: string;
   maxParticipants: string;
+  URL: string;
 }
 
 const places: PlaceItem[] = [
@@ -39,6 +40,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
   {
     id: 2,
@@ -51,6 +53,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
   {
     id: 3,
@@ -63,6 +66,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
   {
     id: 4,
@@ -75,6 +79,7 @@ const places: PlaceItem[] = [
     tag: ["태그1", "태그2", "태그3"],
     Participants: "12",
     maxParticipants: "30",
+    URL: "hometown-pub/chatroom/111",
   },
 ];
 
@@ -99,7 +104,7 @@ const ParticipatePlace = () => {
   );
 
   return (
-    <div className="w-[490px] bg-white rounded-[10px] px-[25px] pb-[20px] mb-[20px]">
+    <div className="w-[490px] bg-white rounded-[10px] px-[25px] mb-[20px]">
       <div className="flex justify-between  py-[21.5px]">
         <div className="text-regular font-semibold leading-[21px]">
           내가 참여 예정인 장소
@@ -138,9 +143,11 @@ const ParticipatePlace = () => {
           {groupedPlaces.map((group, index) => (
             <div className="slide w-full" key={`item-${index}`}>
               {group.map((item) => (
-                <Link href={`hometown-pub/chatroom/${111}`} key={item.id}>
-                  <ParticipatePlaceItem {...item} buttonValue="채팅방 입장" />
-                </Link>
+                <ParticipatePlaceItem
+                  {...item}
+                  key={item.id}
+                  buttonValue="채팅방 입장"
+                />
               ))}
             </div>
           ))}
