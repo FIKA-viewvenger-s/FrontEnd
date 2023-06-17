@@ -1,4 +1,4 @@
-const { transform } = require("typescript")
+const { transform } = require("typescript");
 
 module.exports = {
   content: ["src/**/*.@(j|t)s?(x)", "stories/**/*.@(j|t)s?(x)"],
@@ -107,6 +107,13 @@ module.exports = {
         medium: ["15px", { fontWeight: 400, lineHeight: "1.5" }],
         caption: ["11px", { fontWeight: 600, lineHeight: "1.5" }],
         buton: ["24px", { fontWeight: 400, lineHeight: "24px" }],
+        heading1: ["25px", { fontWeight: 700, lineHeight: "30px" }],
+        heading2: ["21px", { fontWeight: 700, lineHeight: "25px" }],
+        heading600: ["17px", { fontWeight: 600, lineHeight: "20px" }],
+        body600: ["15px", { fontWeight: 600, lineHeight: "18px" }],
+        body500: ["15px", { fontWeight: 500, lineHeight: "18px" }],
+        details600: ["13px", { fontWeight: 600, lineHeight: "15px" }],
+        details500: ["13px", { fontWeight: 500, lineHeight: "15px" }],
       },
     },
   },
