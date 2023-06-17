@@ -7,25 +7,31 @@ const userInfo = [
     user: "test1",
     sender: "",
     messages: "일단 대충 데이터 하나 넣어보겠습니다",
-    date: "2023-06-03"
+    date: "2023-06-03",
+    dateChange: "06월 03일",
+    dayOfWeek: "토요일"
   },
   {
     user: "test1",
     sender: "",
     messages: "네 그러시죠",
-    date: "2023-06-04"
+    date: "2023-06-04",
+    dateChange: "06월 04일",
+    dayOfWeek: "일요일"
   },
   {
     user: "test2",
     sender: "test2",
     messages: "날짜 변경되면?",
-    date: "2023-06-05"
+    date: "2023-06-04",
   },
   {
     user: "test1",
     sender: "",
     messages: "날짜 변경해서 또한번 작성하는데 이번엔 기이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이이일게",
-    date: "2023-06-06"
+    date: "2023-06-06",
+    dateChange: "06월 06일",
+    dayOfWeek: "화요일"
   },
   {
     user: "test1",
@@ -48,13 +54,36 @@ const ChattingRoom = () => {
         <div className="flex flex-col justify-center items-center box-border ">
           {userInfo?.map((item) => 
             item.sender === item.user 
-            ? <div className="w-[700px] m-[30px] bg-gray-110 p-[20px] text-center relative 
+            ? item.dateChange ? 
+            <div className="flex flex-col items-center justify-center">
+              <div className="border rounded-[30px] w-36 max-w-md flex flex-col items-center text-center justify-center]">{item.dateChange} {item.dayOfWeek}</div>
+              <div className="w-[700px] m-[30px] bg-gray-110 p-[20px] text-center relative 
+                  before:content-[''] before:w-[0px] before:h-[0px] before:absolute before:border-l-[10px] before:border-r-[10px] 
+                  before:border-t-[10px] before:border-b-[10px] before:right-[-20px] before:top-[6px] 
+                  before:border-r-transparent before:border-b-transparent before:border-l-gray-110 before:border-t-gray-110"
+                >
+                  {item.date?.substring(0, 10)}
+                  {item.messages}
+                </div>
+            </div>
+              : <div className="w-[700px] m-[30px] bg-gray-110 p-[20px] text-center relative 
                 before:content-[''] before:w-[0px] before:h-[0px] before:absolute before:border-l-[10px] before:border-r-[10px] 
                 before:border-t-[10px] before:border-b-[10px] before:right-[-20px] before:top-[6px] 
                 before:border-r-transparent before:border-b-transparent before:border-l-gray-110 before:border-t-gray-110"
               >
                 {item.date?.substring(0, 10)}
                 {item.messages}
+              </div>
+            : item.dateChange ? 
+            <div className="flex flex-col items-center justify-center">
+              <div className="border rounded-[30px] w-36 max-w-md flex flex-col items-center text-center justify-center]">{item.dateChange} {item.dayOfWeek}</div>
+               <div className="w-[700px] m-[30px] bg-gray-20 p-[20px] text-center relative 
+                  before:content-[''] before:w-[0px] before:h-[0px] before:absolute before:border-l-[10px] before:border-r-[10px] 
+                  before:border-t-[10px] before:border-b-[10px] before:left-[-20px] before:top-[6px] 
+                  before:border-l-transparent before:border-b-transparent before:border-r-gray-20 before:border-t-gray-20"
+                >
+                  {item.messages}
+                </div>
               </div>
             : <div className="w-[700px] m-[30px] bg-gray-20 p-[20px] text-center relative 
                 before:content-[''] before:w-[0px] before:h-[0px] before:absolute before:border-l-[10px] before:border-r-[10px] 
