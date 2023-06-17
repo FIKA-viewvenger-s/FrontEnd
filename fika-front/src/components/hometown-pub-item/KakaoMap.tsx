@@ -59,7 +59,7 @@ const kakaoMap = () => {
 
   return (
     <div className="w-[490px] h-full bg-white rounded-[10px] flex flex-col">
-      <div className="py-[21.5px] px-[25px] text-regular font-semibold leading-[21px]">
+      <div className="py-[21.5px] px-[25px] text-heading600">
         지도에서 응원 장소 찾기
       </div>
       <Map
