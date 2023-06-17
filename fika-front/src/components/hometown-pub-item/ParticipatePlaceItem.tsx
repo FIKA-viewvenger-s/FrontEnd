@@ -57,13 +57,13 @@ const ParticipatePlaceItem: FC<propsItem> = ({
             />
           </div>
           <div className="flex flex-col gap-[5px] leading-none">
-            <h3 className="text-[14px] font-semibold">{title}</h3>
-            <p className="text-[12px] font-semibold">
+            <h3 className="text-body600">{title}</h3>
+            <p className="text-details600">
               <Calendar />
               {schedule}
             </p>
             {/* <p className="text-[14px] font-semibold">{place}</p> */}
-            <p className="text-[12px] font-semibold">
+            <p className="text-details600">
               <Location />
               {location}
             </p>
@@ -71,7 +71,7 @@ const ParticipatePlaceItem: FC<propsItem> = ({
               {!!tag &&
                 tag.map((item, idx) => (
                   <span
-                    className="bg-[#F3F5F8] rounded-[5px] color-[#828282] text-xs py-[3px] px-[8px]"
+                    className="bg-[#F3F5F8] rounded-[5px] color-[#828282] text-details500 py-[3px] px-[8px]"
                     key={idx}
                   >
                     {item}
@@ -97,12 +97,12 @@ const ParticipatePlaceItem: FC<propsItem> = ({
                   />
                 ))}
             </div>
-            <div className="text-xs font-semibold">
+            <div className=" text-details500">
               {Participants}/{maxParticipants}명 참여
             </div>
           </div>
           <button
-            className="font-semibold text-[14px] leading-[18px] text-white bg-blue-primary py-3 px-4 rounded-[100px]"
+            className="text-body600 leading-[18px] text-white bg-blue-primary py-3 px-4 rounded-[100px]"
             onClick={() => clickHandler(URL)}
           >
             {buttonValue}
