@@ -58,13 +58,13 @@ const kakaoMap = () => {
   }, []);
 
   return (
-    <div className="w-[490px] h-full bg-white rounded-[10px] flex flex-col">
-      <div className="py-[21.5px] px-[25px] text-heading600">
+    <div className="w-[490px] tablet:w-full tablet:max-w-none h-full bg-white rounded-[10px] flex flex-col">
+      <div className="py-[21.5px] px-[25px] text-heading600 ">
         지도에서 응원 장소 찾기
       </div>
       <Map
         center={locationState.center}
-        className="w-full rounded-b-[10px] flex-1 min-h-[490px]"
+        className="w-full rounded-b-[10px] flex-1 min-h-[490px] tablet:h-full"
         level={3} // 지도의 확대 레벨
       >
         {!locationState.isLoading && (
