@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { tr } from "date-fns/locale";
 import { FC, useState, Dispatch, SetStateAction } from "react";
 import {
   FieldPath,
@@ -58,21 +59,21 @@ const Select = <
       {...rest}
       {...field}
     >
-      <div
-        className=" border border-[#CED4DA] rounded-[3px] py-[10px] px-[8px] text-[14px] text-[#868E96] leading-[20px] font-normal"
-        onClick={() => setOpen(!open)}
-      >
+      <div className=" text-[14px] font-normal" onClick={() => setOpen(!open)}>
         {value}
       </div>
       <ul
         className={clsx(
-          "absolute top-[51px] w-[inherit] bg-white text-[#1A1A1A] text-[14px] leading-[20px] font-normal rounded-[3px] shadow-[0px_2px_8px_rgba(9,30,66,0.08)] ",
+          "absolute top-[23px] -right-[8px] bg-white border rounded-lg w-[170%] text-center",
           !open && "hidden"
         )}
       >
         {option.map((option) => (
           <li
-            className="py-[6px] px-[16px] cursor-pointer"
+            className={clsx(
+              " p-[10px] text-body500 cursor-pointer border-b ",
+              true ? " text-blue-select" : ""
+            )}
             onClick={() => {
               setOpen(false);
               onChange(option.label);

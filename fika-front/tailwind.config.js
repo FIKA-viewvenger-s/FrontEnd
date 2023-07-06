@@ -30,6 +30,7 @@ module.exports = {
           80: "#6172EE",
           90: "#4E5ED4",
           100: "#3243AE",
+          select: "#529AF8",
         },
         gray: {
           10: "#F4F7FB",
@@ -115,7 +116,16 @@ module.exports = {
         details600: ["13px", { fontWeight: 600, lineHeight: "15px" }],
         details500: ["13px", { fontWeight: 500, lineHeight: "15px" }],
       },
+      screens: {
+        'tablet': { 'max': '1023px' },
+        'mobile': { 'max': '812px' },
+      },
+      boxShadow: {
+        header: '0px 0.3010936508871964px 0.3010936508871964px -1.25px rgba(0, 0, 0, 0.18), 0px 1.1442666516217286px 1.1442666516217286px -2.5px rgba(0, 0, 0, 0.15889), 0px 5px 5px -3.75px rgba(0, 0, 0, 0.0625)',
+      },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
+
+
