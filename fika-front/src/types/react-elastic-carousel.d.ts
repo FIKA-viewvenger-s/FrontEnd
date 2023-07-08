@@ -3,14 +3,13 @@ declare module "react-elastic-carousel" {
 
   interface ReactElasticCarouselProps {
     children?: React.ReactNode;
-    isRTL?: boolean;
     className?: string;
     // Defaults to 1
     itemsToShow?: number;
     // Defaults to false
     verticalMode?: boolean;
     // Defaults to false
-    isRTL: boolean;
+    isRTL?: boolean;
     // Defaults to true
     pagination?: boolean;
     // Defaults to 500
