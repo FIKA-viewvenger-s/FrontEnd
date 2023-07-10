@@ -4,11 +4,6 @@ import { ko } from "date-fns/locale";
 import ChevronUp from "src/ui/icon/ChevronUp";
 import Chevrondown from "src/ui/icon/Chevrondown";
 
-interface WeeklyCalendarProps {
-  currentMonths: Date;
-  setCurrentMonths: (x: Date) => void;
-}
-
 const weekStarts = [
   { dayOfTheWeek: "Sun", value: 0 },
   { dayOfTheWeek: "Mon", value: 1 },
@@ -24,18 +19,25 @@ const weekStarts = [
 //        3. 월 이동 후 날짜 가장 끝 일자로 이동 후 다시 월이동 할경우 일자랑 월이랑 따로 놈
 //        4. 페이지 첫 진입시 오늘일자 또는 기준이되는 일자를 어디에 둘것인지 논의 필요.
 
-const WeeklyCalendar: FC<WeeklyCalendarProps> = ({
-  currentMonths,
-  setCurrentMonths,
-}) => {
+const WeeklyCalendar: FC = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [days, setDays] = useState<0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined>(1);
 
+  // useEffect(() => {
+  //   if (format(currentMonths, "LL") !== format(new Date(), "LL")) {
+  //     setCurrentDate(currentMonths);
+  //   }
+  // }, [currentMonths]);
+
   useEffect(() => {
-    if (format(currentMonths, "LL") !== format(new Date(), "LL")) {
-      setCurrentDate(currentMonths);
+    const toDayOfWeek = format(currentDate, "eeee").substring(0, 3);
+
+    const test = weekStarts.find((item) => item.dayOfTheWeek === toDayOfWeek);
+
+    if (test) {
+      setDays(test.value as 0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined);
     }
-  }, [currentMonths]);
+  }, []);
 
   //현재 주의 시작일 계산
   const weekStart = startOfWeek(currentDate, { weekStartsOn: days });
@@ -56,9 +58,9 @@ const WeeklyCalendar: FC<WeeklyCalendarProps> = ({
     setDays(yesterDayValue?.value as 0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined);
     setCurrentDate((prevDate) => subDays(prevDate, 1));
 
-    if (format(subDays(currentDate, 1), "LL") !== format(currentMonths, "LL")) {
-      setCurrentMonths(subDays(currentDate, 1));
-    }
+    // if (format(subDays(currentDate, 1), "LL") !== format(currentMonths, "LL")) {
+    //   setCurrentMonths(subDays(currentDate, 1));
+    // }
   };
 
   const handleNextDay = () => {
@@ -72,9 +74,9 @@ const WeeklyCalendar: FC<WeeklyCalendarProps> = ({
     setDays(tomorrowDayValue?.value as 0 | 1 | 2 | 3 | 4 | 5 | 6 | undefined);
     setCurrentDate((prevDate) => addDays(prevDate, 1));
 
-    if (format(addDays(currentDate, 1), "LL") !== format(currentMonths, "LL")) {
-      setCurrentMonths(addDays(currentDate, 1));
-    }
+    // if (format(addDays(currentDate, 1), "LL") !== format(currentMonths, "LL")) {
+    //   setCurrentMonths(addDays(currentDate, 1));
+    // }
   };
 
   return (

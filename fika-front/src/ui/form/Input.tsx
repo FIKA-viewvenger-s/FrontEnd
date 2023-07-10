@@ -19,6 +19,7 @@ export interface InputProps<
     >,
     UseControllerProps<TFieldValues, TName> {
   contained?: boolean;
+  space?: boolean;
   rightIcon?: ReactNode;
 }
 
@@ -36,6 +37,8 @@ const Input = <
     rules,
     contained,
     shouldUnregister,
+    className,
+    space,
     ...rest
   } = props;
 
@@ -51,7 +54,7 @@ const Input = <
   });
 
   return (
-    <div className={clsx(error && "mb-4")}>
+    <div className={clsx(error && "mb-4", space && "mt-3 mb-8")}>
       <InputBase
         {...rest}
         {...field}
