@@ -6,6 +6,8 @@ import Plus from "src/ui/icon/Plus";
 import Link from "next/link";
 import WeeklyCalendar from "./WeeklyCalendar";
 import { subMonths, format, addMonths } from "date-fns";
+import CountryFilter from "./SoccerTeamSelection";
+import SoccerTeamSelection from "./SoccerTeamSelection";
 
 const menu = ["전체", "PL", "라리가", "분데스리가", "세리에A", "리그1"];
 const state = ["종료", "경기중", "경기전"];
@@ -13,15 +15,15 @@ const state = ["종료", "경기중", "경기전"];
 const MainBoard = () => {
   const [showBoard, setShowBoard] = useState(true);
   const [selectMenu, setSelectMenu] = useState("전체");
-  const [currentMonths, setCurrentMonths] = useState(new Date());
+  // const [currentMonths, setCurrentMonths] = useState(new Date());
 
-  const handlePrevMonths = () => {
-    setCurrentMonths((prevMonths) => subMonths(prevMonths, 1));
-  };
+  // const handlePrevMonths = () => {
+  //   setCurrentMonths((prevMonths) => subMonths(prevMonths, 1));
+  // };
 
-  const handleNextMonths = () => {
-    setCurrentMonths((prevMonths) => addMonths(prevMonths, 1));
-  };
+  // const handleNextMonths = () => {
+  //   setCurrentMonths((prevMonths) => addMonths(prevMonths, 1));
+  // };
 
   return (
     <div
@@ -37,11 +39,9 @@ const MainBoard = () => {
         )}
       >
         <div className="font-bold text-[18px] text-black">경기 일정</div>
-        <button onClick={handlePrevMonths}>지난달</button>
         <div className="font-bold text-[25px] text-black">
-          {format(currentMonths, "yyyy.LL")}
+          {format(new Date(), "yyyy.LL")}
         </div>
-        <button onClick={handleNextMonths}>다음달</button>
 
         <button
           className="w-7 h-7 flex justify-center items-center"
@@ -53,47 +53,9 @@ const MainBoard = () => {
 
       {showBoard && (
         <>
-          <WeeklyCalendar
-            currentMonths={currentMonths}
-            setCurrentMonths={setCurrentMonths}
-          />
+          <WeeklyCalendar />
 
-          <div className="py-2">
-            <div className="flex">
-              <div className="mr-1 rounded-full px-4 py-3 bg-gray-20 text-gray-70">
-                국내 축구
-              </div>
-              <div className="rounded-full px-4 py-3  bg-gray-bg text-white">
-                해외 축구
-              </div>
-            </div>
-          </div>
-
-          <div className="flex border-b border-t border-b-gray-20">
-            {menu.map((item) => {
-              return (
-                <>
-                  <button
-                    key={item}
-                    onClick={() => setSelectMenu(item)}
-                    className={clsx(
-                      "px-4 pt-3 bg-none text-gray-70 font-medium text-[15px]",
-                      selectMenu === item ? "text-gray-bg " : "pb-3"
-                    )}
-                  >
-                    <div
-                      className={clsx(
-                        selectMenu === item &&
-                          "border-b-[3px] border-gray-bg pb-[9px]"
-                      )}
-                    >
-                      {item}
-                    </div>
-                  </button>
-                </>
-              );
-            })}
-          </div>
+          <SoccerTeamSelection />
 
           {state.map((item) => {
             return (

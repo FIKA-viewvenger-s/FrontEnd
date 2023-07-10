@@ -31,11 +31,11 @@ const InputBase = forwardRef<HTMLInputElement, InputBaseProps>((props, ref) => {
       <input
         ref={ref}
         className={clsx(
-          "rounded  py-3 text-black focus-visible:border-blue-primary ",
+          "rounded-lg  py-3 text-black focus-visible:border-blue-primary ",
           fullWidth && "w-full",
-          rightIcon ? "pl-12 pr-4" : "px-4",
+          rightIcon ? "pl-8 pr-4" : "px-4",
           contained
-            ? " border-none bg-gray-20"
+            ? " border-none bg-gray-10"
             : "border-gray-30 border border-solid bg-white",
           className
         )}
