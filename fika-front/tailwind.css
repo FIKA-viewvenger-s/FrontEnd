@@ -13,7 +13,7 @@
     @apply mx-auto h-full  overflow-y-scroll bg-white sm:bg-gray-800;
   }
   main {
-    @apply max-w-[1024px] m-auto;
+    @apply max-w-[1024px] m-auto pt-[55px];
 
     color: #263038;
   }

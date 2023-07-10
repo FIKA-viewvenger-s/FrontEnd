@@ -18,7 +18,7 @@ const Header: FC<HeaderProps> = ({ title, children }) => {
   const asd = useWatch({ name: "search", control });
 
   return (
-    <header className="w-full bg-white ">
+    <header className="w-full bg-white shadow-header fixed z-[999]">
       <div className=" w-full max-w-256 flex mx-auto justify-between py-[14px] px-[25px] items-center">
         <div className="text-center text-gray-100 text-[18px] font-bold">
           {title}
