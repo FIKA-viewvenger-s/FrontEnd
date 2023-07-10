@@ -1,8 +1,12 @@
 import clsx from "clsx";
 import { useRouter } from "next/router";
-import { useState } from "react";
-import { useFieldArray, useForm } from "react-hook-form";
+import { ReactNode, useState } from "react";
+import { useFieldArray, useForm, useWatch } from "react-hook-form";
+import Header from "src/components/common/header";
+import Widget from "src/components/common/widget";
 import CarouselTeamLogo from "src/components/hometown-pub-item/CarouselTeamLogo";
+import SoccerTeamSelection from "src/components/hometown-pub-item/SoccerTeamSelection";
+import CountryFilter from "src/components/hometown-pub-item/SoccerTeamSelection";
 import Button from "src/ui/Button";
 import Input from "src/ui/form/Input";
 import Chevrondown from "src/ui/icon/Chevrondown";
@@ -13,6 +17,7 @@ const menu = ["PL", "라리가", "분데스리가", "세리에A", "리그1", "�
 const FieldValues = {
   league: "",
   team: "",
+  assmLogo: "",
   assmTitle: "",
   country: "",
   assmDt: "",
@@ -25,6 +30,7 @@ const FieldValues = {
 
 const NewAssemble = () => {
   const [selectMenu, setSelectMenu] = useState("전체");
+  const [selectTeam, setSelectTeam] = useState("");
   const { back } = useRouter();
 
   const { handleSubmit, control, register } = useForm({
@@ -35,149 +41,159 @@ const NewAssemble = () => {
     name: "tags",
   });
 
+  const assmReserveStt = useWatch({ control, name: "assmReserveStt" });
+
+  const handleChangeValue = (value: string) => {
+    setSelectTeam(value);
+  };
+
   return (
     <form
-      className="text-black"
+      className="text-black w-200 m-auto pb-10"
       onSubmit={handleSubmit((data) => {
         console.log(data);
+        console.log(selectTeam);
       })}
     >
-      <div>
-        <div className="flex items-center">
+      <div className="mb-5">
+        <div className="flex items-center mt-5 mb-8">
           <div
-            className="rotate-90 transform w-10 h-10 flex items-center justify-center cursor-pointer"
+            className="rotate-90 transform flex items-center justify-center cursor-pointer"
             onClick={() => back()}
           >
             <Chevrondown />
           </div>
-          <div>응원 모임 등록하기</div>
+          <div className="text-regular ml-5">응원 모임 등록하기</div>
         </div>
 
-        <div className="justify-between px-[25px] py-[22px]">
-          {/* <div className="text-regular font-semibold leading-[21px] text-black">
-            <button className="mr-1 rounded-full px-4 py-3 bg-gray-20 text-gray-70">
-              국내 축구
-            </button>
-            <button className="rounded-full px-4 py-3  bg-gray-bg text-white">
-              해외 축구
-            </button>
-          </div> */}
+        {/* <div className="justify-between "> */}
+        <SoccerTeamSelection isTeamLogo handleChangeValue={handleChangeValue} />
+        <div className="text-details500 text-gray-70">
+          모임 개설 후 응원팀은 변경할 수 없어요.
+        </div>
+      </div>
 
-          <div className="flex">
-            <div className="flex">
-              <input
-                {...register("country")}
-                value="domestic"
-                type="radio"
-                id="domestic"
-              />
-              <label htmlFor="domestic">국내 축구</label>
-            </div>
-            <div className="flex">
-              <input
-                {...register("country")}
-                value="overseas"
-                type="radio"
-                id="overseas"
-              />
-              <label htmlFor="overseas">해외 축구</label>
-            </div>
+      <div>
+        <label htmlFor="assmTitle" className="text-body500 py-3">
+          모임명
+        </label>
+        <Input control={control} name="assmTitle" contained fullWidth space />
+      </div>
+
+      <div>
+        <label htmlFor="assmDt" className="text-body500 py-3">
+          모임 날짜
+        </label>
+        <Input control={control} name="assmDt" contained fullWidth space />
+      </div>
+
+      <div>
+        <label htmlFor="assmAddr" className="text-body500 py-3">
+          모임장소
+        </label>
+        <div className="relative">
+          <Input control={control} name="assmAddr" contained fullWidth space />
+          <div
+            className=" cursor-pointer absolute top-3 right-4"
+            onClick={() => console.log("click")}
+          >
+            <Search />
           </div>
         </div>
-        <div className="flex px-[20px]">
-          {menu.map((item, idx) => {
-            return (
-              <div key={idx}>
-                <button
-                  onClick={() => setSelectMenu(item)}
-                  className={clsx(
-                    "px-4 pt-3 bg-none text-gray-70 font-medium text-[15px]",
-                    selectMenu === item ? "text-gray-bg " : "pb-3"
-                  )}
-                >
-                  <div
-                    className={clsx(
-                      selectMenu === item &&
-                        "border-b-[3px] border-gray-bg pb-[9px]"
-                    )}
-                  >
-                    {item}
-                  </div>
-                </button>
-              </div>
-            );
-          })}
-        </div>
-        <CarouselTeamLogo />
-        <div>모임 개설 후 응원팀은 변경할 수 없어요.</div>
       </div>
 
       <div>
-        <label htmlFor="assmTitle">모임명</label>
-        <Input control={control} name="assmTitle" />
-      </div>
-
-      <div>
-        <label htmlFor="assmDt">모임 날짜</label>
-        <Input control={control} name="assmDt" />
-      </div>
-
-      <div>
-        <label htmlFor="assmAddr">모임장소</label>
-        <Input control={control} name="assmAddr" />
-      </div>
-
-      <div>
-        <div>장소 예약 여부</div>
-        <div className="flex">
+        <div className="text-body500 py-3">장소 예약 여부</div>
+        <div className="flex  mt-2.5 mb-5 gap-2.5">
           <div className="flex">
             <input
               {...register("assmReserveStt")}
               value="collect"
               type="radio"
               id="collect"
+              className="peer absolute top-0 opacity-0"
             />
-            <label htmlFor="collect">아직 인원 모집중이에요</label>
+            <label
+              htmlFor="collect"
+              className={clsx(
+                "py-3 px-4 rounded-lg text-medium ",
+                assmReserveStt === "collect"
+                  ? "bg-blue-80  text-white"
+                  : "bg-gray-10  text-gray-50"
+              )}
+            >
+              아직 인원 모집중이에요
+            </label>
           </div>
           <div className="flex">
             <input
               {...register("assmReserveStt")}
+              className="peer absolute top-0 opacity-0"
               value="complete"
               type="radio"
               id="complete"
             />
-            <label htmlFor="complete">장소 예약이 완료됐어요</label>
+            <label
+              htmlFor="complete"
+              className={clsx(
+                "py-3 px-4 rounded-lg text-medium ",
+                assmReserveStt === "complete"
+                  ? "bg-blue-80  text-white"
+                  : "bg-gray-10  text-gray-50"
+              )}
+            >
+              장소 예약이 완료됐어요
+            </label>
           </div>
-        </div>
-
-        <div className=" cursor-pointer" onClick={() => console.log("click")}>
-          <Search />
         </div>
       </div>
       <div>
-        <div>태그</div>
-        <div className="flex">
+        <div className="text-body500 py-3">태그</div>
+        <div className="flex gap-2.5 items-center">
           {fields.map((field, index) => {
             return (
-              <Input
-                control={control}
-                name={`tags.${index}.tagName`}
-                key={field.tagName}
-              />
+              <div className="relative">
+                <Input
+                  control={control}
+                  name={`tags.${index}.tagName`}
+                  key={field.tagName}
+                  rightIcon
+                  contained
+                  fullWidth
+                  space
+                />
+                <div className=" absolute top-5.5 left-4">#</div>
+              </div>
             );
           })}
-
-          <Button
+          <button
+            className="py-2.5 px-4 h-12  top-[-8px] relative rounded-lg bg-gray-10"
             onClick={() => {
               append({ tagName: undefined });
             }}
           >
             태그 추가하기 <Plus />
-          </Button>
+          </button>
         </div>
       </div>
-      <Button type="submit">모임 등록하기</Button>
+      <Button
+        type="submit"
+        className="py-3.5 rounded-lg text-white text-regular bg-blue-80"
+      >
+        모임 등록하기
+      </Button>
     </form>
+  );
+};
+
+NewAssemble.getLayout = (page: ReactNode) => {
+  return (
+    <div className=" bg-white">
+      <Header title="FIKA" isNew>
+        <></>
+      </Header>
+      <main>{page}</main>
+    </div>
   );
 };
 

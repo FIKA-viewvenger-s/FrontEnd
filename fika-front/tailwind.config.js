@@ -55,6 +55,9 @@ module.exports = {
           thumbGray: "#383d48",
         },
       },
+      inset: {
+        5.5: "22px",
+      },
       animation: {
         "widget-animation": "widget-animation 5500ms -500ms",
       },
@@ -75,14 +78,18 @@ module.exports = {
         8.5: "34px",
         13: "50px",
         130.75: "523px",
+        19.75: "79px",
       },
       margin: {
         6.25: "25px",
       },
       padding: {
+        2.25: "9px",
         2.75: "11px",
         7.5: "30px",
         3.5: "14px",
+        3.75: "15px",
+        3.25: "13px",
       },
       gap: {
         3.75: "15px",
@@ -95,7 +102,9 @@ module.exports = {
         158: "632px",
         105: "420px",
         8.5: "34px",
+        21.5: "86px",
         256: "1024px",
+        200: "800px",
       },
       borderRadius: {
         3.75: "15px",
@@ -117,15 +126,14 @@ module.exports = {
         details500: ["13px", { fontWeight: 500, lineHeight: "15px" }],
       },
       screens: {
-        'tablet': { 'max': '1023px' },
-        'mobile': { 'max': '812px' },
+        tablet: { max: "1023px" },
+        mobile: { max: "812px" },
       },
       boxShadow: {
-        header: '0px 0.3010936508871964px 0.3010936508871964px -1.25px rgba(0, 0, 0, 0.18), 0px 1.1442666516217286px 1.1442666516217286px -2.5px rgba(0, 0, 0, 0.15889), 0px 5px 5px -3.75px rgba(0, 0, 0, 0.0625)',
+        header:
+          "0px 0.3010936508871964px 0.3010936508871964px -1.25px rgba(0, 0, 0, 0.18), 0px 1.1442666516217286px 1.1442666516217286px -2.5px rgba(0, 0, 0, 0.15889), 0px 5px 5px -3.75px rgba(0, 0, 0, 0.0625)",
       },
     },
   },
   plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
-
-

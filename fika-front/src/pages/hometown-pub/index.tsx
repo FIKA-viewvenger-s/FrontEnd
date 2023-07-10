@@ -9,10 +9,12 @@ import Plus from "src/ui/icon/Plus";
 import Button from "src/ui/Button";
 import MainBoard from "src/components/hometown-pub-item/MainBoard";
 import Cross from "src/ui/icon/Cross";
+import { useRouter } from "next/router";
 
 /** NOTE: 다른페이지는 inner 사이즈가 1400px인데 동네 축구펍 페이지만 1024px로 작업 되어있음, why? */
 
 const HometownPub = () => {
+  const { push } = useRouter();
   return (
     <div>
       <div className="py-[10px] px-[25px] flex justify-between">
@@ -28,7 +30,10 @@ const HometownPub = () => {
             </div>
           </div>
         </div>
-        <button className="bg-blue-primary py-3 px-5 rounded-full font-bold text-[14px] leading-[18px] text-white">
+        <button
+          className="bg-blue-primary py-3 px-5 rounded-full font-bold text-[14px] leading-[18px] text-white"
+          onClick={() => push("/hometown-pub/new-assemble")}
+        >
           새 응원 모임 만들기
           <Plus fill="#fff" />
         </button>

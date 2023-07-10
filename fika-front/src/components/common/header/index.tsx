@@ -5,20 +5,27 @@ import { useForm, useWatch } from "react-hook-form";
 import Search from "src/ui/icon/Search";
 import Notific from "src/ui/icon/Notific";
 import Alarm from "src/ui/icon/Alarm";
+import clsx from "clsx";
 
 export interface HeaderProps {
   title: string;
   children: ReactNode;
+  isNew?: boolean;
 }
 
-const Header: FC<HeaderProps> = ({ title, children }) => {
+const Header: FC<HeaderProps> = ({ title, children, isNew }) => {
   const { control } = useForm({
     defaultValues: { search: "" },
   });
   const asd = useWatch({ name: "search", control });
 
   return (
-    <header className="w-full bg-white ">
+    <header
+      className={clsx(
+        "w-full bg-white",
+        isNew && " border-b border-[rgb(239, 239, 239)] border-solid"
+      )}
+    >
       <div className=" w-full max-w-256 flex mx-auto justify-between py-[14px] px-[25px] items-center">
         <div className="text-center text-gray-100 text-[18px] font-bold">
           {title}
