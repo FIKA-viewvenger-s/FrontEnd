@@ -32,9 +32,19 @@ const selectBoxOption = [
 
 const Recruiting = () => {
   const { control } = useForm({ defaultValues: { select: "최신 등록순" } });
-
+  const router = useRouter();
   return (
     <div>
+      <div className=" w-[100vw] relative left-1/2 -translate-x-1/2 flex justify-between p-5 tablet:bg-white tablet:shadow-navBar tablet:relative">
+        <div
+          className="cursor-pointer -rotate-90 self-center"
+          onClick={() => router.back()}
+        >
+          <ChevronUp />
+        </div>
+        <div>2020.00.00 경기명</div>
+        <div></div>
+      </div>
       <div className="flex tablet:flex-col  justify-between gap-11 tablet:gap-0">
         <div className="w-full max-w-[490px] tablet:max-w-none tablet:order-2  bg-white rounded-[10px] pb-[20px] px-[25px]">
           <div className="justify-between py-[21.5px]">
@@ -79,20 +89,9 @@ const Recruiting = () => {
 };
 
 Recruiting.getLayout = (page: ReactNode) => {
-  const router = useRouter();
   return (
     <>
       <Header title="FIKA">{/* <Tabs /> */}</Header>
-      <div className="flex justify-between p-5 tablet:bg-white tablet:shadow-header tablet:relative">
-        <div
-          className="cursor-pointer -rotate-90 self-center"
-          onClick={() => router.back()}
-        >
-          <ChevronUp />
-        </div>
-        <div>2020.00.00 경기명</div>
-        <div></div>
-      </div>
       <main>{page}</main>
     </>
   );

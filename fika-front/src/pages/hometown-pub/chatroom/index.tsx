@@ -10,19 +10,20 @@ import Button from "src/ui/Button";
 import MainBoard from "src/components/hometown-pub-item/MainBoard";
 import Cross from "src/ui/icon/Cross";
 
-import { ReactNode } from "react";
-import Header from "src/components/common/header";
 import ChattingRoom from "src/components/hometown-pub-item/ChattingRoom";
+import ChevronUp from "src/ui/icon/ChevronUp";
+import { useRouter } from "next/router";
 const Chatroom = () => {
+  const router = useRouter();
   return (
-    <div className="h-full flex flex-col	justify-center items-center">
-      <div className="max-w-[1024px] flex ">모임명</div>
-      <ChattingRoom/>
+    <div className="h-full flex flex-col justify-center items-center">
+      <ChattingRoom />
     </div>
   );
 };
 
 Chatroom.getLayout = (page: ReactNode) => {
+  const router = useRouter();
   return (
     <>
       <Header title="FIKA">{/* <Tabs /> */}</Header>

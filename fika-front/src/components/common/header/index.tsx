@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({ title, children, isNew }) => {
   return (
     <header
       className={clsx(
-        "w-full bg-white",
+        "w-full bg-white shadow-header fixed z-[999]",
         isNew && " border-b border-[rgb(239, 239, 239)] border-solid"
       )}
     >
