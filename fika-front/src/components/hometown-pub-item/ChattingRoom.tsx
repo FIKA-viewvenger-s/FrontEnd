@@ -55,7 +55,7 @@ const MESSAGES_DUMMY_DATA = [
 const ChattingRoom = () => {
   return (
     <>
-      <div className="h-full overflow-auto scrollbar-hide max-w-[554px]">
+      <div className="h-full overflow-auto scrollbar-hide max-w-[554px] mobile:max-w-none mobile:px-[14px]">
         <div className="flex flex-col justify-center items-center box-border gap-[30px] ">
           {MESSAGES_DUMMY_DATA?.map((item) =>
             item.sender === item.user ? (
@@ -84,7 +84,7 @@ const ChattingRoom = () => {
           )}
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center bg-white mt-10 fixed bottom-0 w-[47.5rem]">
+      <div className="flex flex-col justify-center items-center bg-white mt-10 fixed bottom-0 w-[47.5rem] mobile:w-full">
         <input
           className="h-[47px] w-full bg-gray-20 p-5"
           placeholder="메세지를 입력하세요"
