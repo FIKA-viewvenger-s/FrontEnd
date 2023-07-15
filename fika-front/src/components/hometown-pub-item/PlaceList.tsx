@@ -12,6 +12,9 @@ import profile04 from "../../assets/images/profile04.jpg";
 import Link from "next/link";
 import CountryFilter from "./SoccerTeamSelection";
 import SoccerTeamSelection from "./SoccerTeamSelection";
+import Select from "src/ui/form/Select";
+import Chevrondown from "src/ui/icon/Chevrondown";
+import { useForm } from "react-hook-form";
 
 const placeItem = [
   {
@@ -40,7 +43,23 @@ const placeItem = [
   },
 ];
 
+const selectBoxOption = [
+  {
+    label: "최신 등록순",
+    value: 1,
+  },
+  {
+    label: "가까운 순",
+    value: 2,
+  },
+  {
+    label: "참여 많은순",
+    value: 3,
+  },
+];
+
 const PlaceList = () => {
+  const { control } = useForm({ defaultValues: { select: "최신 등록순" } });
   return (
     <div className="w-full max-w-[490px]  bg-white rounded-[10px] pb-[20px]">
       <div className="justify-between px-[25px] py-[21.5px]">
@@ -48,25 +67,15 @@ const PlaceList = () => {
           응원 장소 찾기
         </div>
       </div>
-      {/* TODO: 캐러셀 적용하기 */}
-      {/* <div className="w-full p-3 flex overflow-x-auto max-w-[490px] gap-2">
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체0</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체1</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체2</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체3</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체4</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체5</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체6</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체7</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체8</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체9</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체10</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체11</div>
-        <div className="w-[86px] h-[79px] min-w-[86px] justify-center items-center border-gray-bg border-2 text-black">전체12</div>
-      </div> */}
-
       <SoccerTeamSelection isTeamLogo />
-      <div>
+      <div className="flex justify-between text-caption text-[#828282] pb-2 px-[10px]">
+        <span>모집 장소</span>
+        <div className="flex items-center">
+          <Select control={control} name="select" option={selectBoxOption} />
+          <Chevrondown width="12" height="12" />
+        </div>
+      </div>
+      <div className="h-[calc(172px*3.4)] max-h-[calc(172px*3.2)] overflow-y-auto">
         {!placeItem && (
           <div className="text-center py-[13px] px-[20px]">
             <p className="text-[15px font-medium leading-[1.5] pb-[19px] text-black">
@@ -76,7 +85,7 @@ const PlaceList = () => {
             <Button className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 text-black">
               응원 장소 만들기
             </Button>
-            <Button className="text-white font-bold text-[15px] leading-[18px] BlackRoundButton text-black">
+            <Button className=" font-bold text-[15px] leading-[18px] BlackRoundButton text-black">
               모임 찾기
             </Button>
           </div>
