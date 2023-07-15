@@ -1,5 +1,5 @@
 import Button from "src/ui/Button";
-import PlaceItem from "./ParticipatePlaceItem";
+import PlaceItem from "./AssemblePlaceItem";
 import CarouselTeamLogo from "./CarouselTeamLogo";
 import { useState } from "react";
 import clsx from "clsx";

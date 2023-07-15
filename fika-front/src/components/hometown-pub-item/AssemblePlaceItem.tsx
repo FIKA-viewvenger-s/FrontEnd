@@ -20,7 +20,7 @@ interface propsItem {
   URL?: string;
 }
 
-const ParticipatePlaceItem: FC<propsItem> = ({
+const AssemblePlaceItem: FC<propsItem> = ({
   placeImg,
   title,
   schedule,
@@ -36,7 +36,7 @@ const ParticipatePlaceItem: FC<propsItem> = ({
   const router = useRouter();
 
   // TODO: 단일 책임 원칙에 어긋남, 다른 방법 생각해서 변경하기
-  const clickHandler = (URL: string) => {
+  const clickHandler = (URL: string | undefined) => {
     if (URL) {
       router.push(URL);
     } else {
@@ -113,4 +113,4 @@ const ParticipatePlaceItem: FC<propsItem> = ({
   );
 };
 
-export default ParticipatePlaceItem;
+export default AssemblePlaceItem;

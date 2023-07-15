@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "src/ui/Button";
-import ParticipatePlaceItem from "./ParticipatePlaceItem";
+import AssemblePlaceItem from "./AssemblePlaceItem";
 import { useState } from "react";
 import clsx from "clsx";
 import Chevrondown from "../../ui/icon/Chevrondown";
@@ -83,7 +83,7 @@ const places: PlaceItem[] = [
   },
 ];
 
-const ParticipatePlace = () => {
+const AssemblePlace = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleAccordion = () => {
@@ -141,7 +141,7 @@ const ParticipatePlace = () => {
           {groupedPlaces.map((group, index) => (
             <div className="slide w-full" key={`item-${index}`}>
               {group.map((item) => (
-                <ParticipatePlaceItem
+                <AssemblePlaceItem
                   {...item}
                   key={item.id}
                   buttonValue="채팅방 입장"
@@ -155,4 +155,4 @@ const ParticipatePlace = () => {
   );
 };
 
-export default ParticipatePlace;
+export default AssemblePlace;
