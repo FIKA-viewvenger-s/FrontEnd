@@ -4,7 +4,7 @@ import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
 import PlaceList from "src/components/hometown-pub-item/PlaceList";
 import { useRouter } from "next/router";
 import ChevronUp from "src/ui/icon/ChevronUp";
-import ParticipatePlaceItem from "src/components/hometown-pub-item/ParticipatePlaceItem";
+import AssemblePlaceItem from "src/components/hometown-pub-item/AssemblePlaceItem";
 
 import placeImg from "../../../assets/images/img.png";
 import profile01 from "../../../assets/images/profile01.jpg";
@@ -64,7 +64,7 @@ const Recruiting = () => {
             </div>
           </div>
           {Array.from({ length: 4 }, (_, index) => (
-            <ParticipatePlaceItem
+            <AssemblePlaceItem
               placeImg={placeImg}
               title={"모임 제목"}
               schedule={"2월 27일 오후 10시(토)"}

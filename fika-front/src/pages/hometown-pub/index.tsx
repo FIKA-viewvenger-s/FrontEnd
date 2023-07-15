@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import Header from "src/components/common/header";
 import Tabs from "src/components/common/tabs";
 import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
-import ParticipatePlace from "src/components/hometown-pub-item/ParticipatePlace";
+import AssemblePlace from "src/components/hometown-pub-item/AssemblePlace";
 import PlaceList from "src/components/hometown-pub-item/PlaceList";
 import Widget from "src/components/common/widget";
 import Plus from "src/ui/icon/Plus";
@@ -42,7 +42,7 @@ const HometownPub = () => {
       <div className="flex justify-between gap-11">
         <PlaceList />
         <div className="flex flex-col">
-          <ParticipatePlace />
+          <AssemblePlace />
           <KakaoMap />
         </div>
       </div>

@@ -1,14 +1,7 @@
 import { ReactNode } from "react";
 import Header from "src/components/common/header";
-import Tabs from "src/components/common/tabs";
 import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
-import ParticipatePlace from "src/components/hometown-pub-item/ParticipatePlace";
 import PlaceList from "src/components/hometown-pub-item/PlaceList";
-import Widget from "src/components/common/widget";
-import Plus from "src/ui/icon/Plus";
-import Button from "src/ui/Button";
-import MainBoard from "src/components/hometown-pub-item/MainBoard";
-import Cross from "src/ui/icon/Cross";
 
 const Recruiting = () => {
   return (
