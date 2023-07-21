@@ -46,7 +46,12 @@ const AssemblePlaceItem: FC<propsItem> = ({
   };
 
   return (
-    <div className="flex justify-between  pt-[12px] px-[10px] border rounded-[8px] mb-[13px] ">
+    <div
+      className={clsx(
+        "flex justify-between  pt-[12px] px-[10px] rounded-[8px] mb-[13px] ",
+        buttonValue === "참여하기" ? " shadow-item" : "border"
+      )}
+    >
       <div className="flex flex-col gap-[8px] grow">
         <div className="flex gap-[15px]">
           <div className="max-w-[88px]">
@@ -102,7 +107,12 @@ const AssemblePlaceItem: FC<propsItem> = ({
             </div>
           </div>
           <button
-            className="text-body600 leading-[18px] text-white bg-blue-primary py-3 px-4 rounded-[100px]"
+            className={clsx(
+              "text-body600 leading-[18px] py-2 px-4 rounded-[100px] ",
+              buttonValue === "참여하기"
+                ? " text-blue-primary border border-blue-primary "
+                : "text-white bg-blue-primary"
+            )}
             onClick={() => clickHandler(URL)}
           >
             {buttonValue}

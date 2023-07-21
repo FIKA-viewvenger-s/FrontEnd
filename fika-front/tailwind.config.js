@@ -132,6 +132,7 @@ module.exports = {
       boxShadow: {
         navBar: '0px 0.3010936508871964px 0.3010936508871964px -1.25px rgba(0, 0, 0, 0.18), 0px 1.1442666516217286px 1.1442666516217286px -2.5px rgba(0, 0, 0, 0.15889), 0px 5px 5px -3.75px rgba(0, 0, 0, 0.0625)',
         header: "rgba(115, 119, 125, 0.15) 0px 3px 4px 0px",
+        item: "0px 0px 6px 1px rgba(0, 0, 0, 0.04)",
       },
     },
   },
