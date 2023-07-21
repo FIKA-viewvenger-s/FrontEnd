@@ -20,6 +20,7 @@ export interface InputProps<
     UseControllerProps<TFieldValues, TName> {
   contained?: boolean;
   space?: boolean;
+  placeholder?: string;
   rightIcon?: ReactNode;
 }
 
@@ -32,6 +33,7 @@ const Input = <
   const {
     control,
     defaultValue,
+    placeholder,
     name,
     rightIcon,
     rules,
@@ -58,9 +60,11 @@ const Input = <
       <InputBase
         {...rest}
         {...field}
+        placeholder={placeholder}
         rightIcon={rightIcon}
         contained={contained}
         onChange={onChange}
+        className={className}
       />
       {error && (
         <div className="absolute text-regular text-red">{error.message}</div>

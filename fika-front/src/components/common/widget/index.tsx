@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
-import Cross from "src/ui/icon/Cross";
+import Close from "src/ui/icon/Close";
 import MapMarker from "src/ui/icon/MapMarker";
 
 const widgetListTest = [
@@ -8,7 +8,7 @@ const widgetListTest = [
   "나와 가장 잘맞는 축구팀은?",
 ];
 
-const Widget = () => {
+const Banner = () => {
   // const [showWidget, setShowWidget] = useState(true);
   // const [current, setCurrent] = useState<number>(0);
 
@@ -32,7 +32,7 @@ const Widget = () => {
   return (
     <>
       {/* {showWidget && ( */}
-      <div className="bg-blue-primary w-full  flex justify-center items-center ">
+      <div className=" relative bg-blue-primary w-256 mt-19.5 mb-2.5 py-5 rounded-2.5">
         <ul className="flex items-center justify-between ml-2.5 w-256">
           <div className="flex items-center h-20">
             {/* <MapMarker /> */}
@@ -42,7 +42,7 @@ const Widget = () => {
                   return ( */}
             <li
               className={clsx(
-                "py-2.5"
+                "ml-3.75 text-heading600 text-white"
                 // current === index ? "" : "hidden"
               )}
             >
@@ -57,7 +57,7 @@ const Widget = () => {
               className="cursor-pointer"
               onClick={() => setShowWidget(false)}
             >
-              <Cross fill="#fff" />
+              <Close fill="#fff" />
             </div> */}
         </ul>
       </div>
@@ -66,4 +66,4 @@ const Widget = () => {
   );
 };
 
-export default Widget;
+export default Banner;

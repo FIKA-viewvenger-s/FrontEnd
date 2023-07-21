@@ -29,7 +29,7 @@ const MainBoard = () => {
     <div
       className={clsx(
         "w-full bg-white rounded-2.5 px-6 mb-5",
-        showBoard ? "pb-[30px] pt-5 " : "py-5"
+        showBoard ? "pb-7.5 pt-5 " : "py-5"
       )}
     >
       <div
@@ -38,8 +38,8 @@ const MainBoard = () => {
           showBoard ? "mb-4" : ""
         )}
       >
-        <div className="font-bold text-[18px] text-black">경기 일정</div>
-        <div className="font-bold text-[25px] text-black">
+        <div className="text-heading600">경기 일정</div>
+        <div className="font-bold text-body500 text-black">
           {format(new Date(), "yyyy.LL")}
         </div>
 
