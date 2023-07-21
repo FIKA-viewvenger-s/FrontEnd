@@ -1,11 +1,11 @@
 import { FC } from "react";
 
-interface CrossProps {
+interface CloseProps {
   fill?: string;
   size?: string;
 }
 
-const Cross: FC<CrossProps> = ({ fill = "#263038", size = "24" }) => {
+const Close: FC<CloseProps> = ({ fill = "#263038", size = "24" }) => {
   return (
     <svg
       width={size}
@@ -22,4 +22,4 @@ const Cross: FC<CrossProps> = ({ fill = "#263038", size = "24" }) => {
   );
 };
 
-export default Cross;
+export default Close;
