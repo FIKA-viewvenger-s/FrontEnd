@@ -75,40 +75,22 @@ const MainBoard = () => {
                     <div>{item}</div>
                   </div>
                   <div className="flex items-center flex-wrap mobile:block mobile:border-b mobile:border-b-gray200 mobile:pb-4.25">
-                    {item !== "종료" && (
-                      <Link
-                        href={`hometown-pub/recruiting/${48293}`}
-                        className={clsx(
-                          "bg-gray-10 px-4 py-[7px] border rounded-[5px] mobile:hidden",
-                          item === "경기중"
-                            ? "text-red-500 border-red-500"
-                            : "text-black border-black"
-                        )}
-                      >
-                        {item === "경기중"
-                          ? "응원 중인 장소 2곳"
-                          : "응원 예정 장소 1곳"}
-                      </Link>
-                    )}
                     <div className="flex items-center mobile:justify-between mr-5 mobile:mr-0 flex-wrap mobile:mb-2">
-                      <div className="flex gap-2.5 items-center">
-                        <div className="px-2.5 mobile:hidden">팀 이름</div>
+                      <div className="flex gap-2.5 items-center order-2 mobile:order-1">
+                        <div className="px-2.5 mobile:order-2">팀 이름</div>
                         <Image
                           src="/assets/images/logo_1.jpg"
                           alt="logo1"
                           width={26}
                           height={26}
                         />
-                        <div className="px-2.5 hidden mobile:block">
-                          팀 이름
-                        </div>
-                        <div>1</div>
+                        <div className="mobile:order-3">1</div>
                       </div>
                       {item !== "종료" && (
                         <Link
                           href={`hometown-pub/recruiting/${48293}`}
                           className={clsx(
-                            "hidden bg-gray-10 px-4 py-[7px] border rounded-[5px] mobile:block ",
+                            " order-1 bg-gray-10 px-4 py-[7px] border rounded-[5px] mobile:block mobile:order-1",
                             item === "경기중"
                               ? "text-red-500 border-red-500"
                               : "text-black border-black"
@@ -122,7 +104,7 @@ const MainBoard = () => {
                     </div>
                     <div className="flex items-center mobile:justify-between ml-5 mobile:ml-0">
                       <div className="flex gap-2.5 items-center">
-                        <div className="mobile:hidden">1</div>
+                        <div className="mobile:order-3">1</div>
                         <Image
                           src="/assets/images/logo_2.jpg"
                           alt="logo2"
@@ -130,7 +112,6 @@ const MainBoard = () => {
                           height={26}
                         />
                         <div className="px-2.5">팀 이름</div>
-                        <div className="hidden mobile:block">1</div>
                       </div>
                       {item !== "종료" ? (
                         <button

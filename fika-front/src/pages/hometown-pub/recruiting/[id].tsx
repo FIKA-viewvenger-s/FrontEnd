@@ -80,7 +80,7 @@ const Recruiting = () => {
             />
           ))}
         </div>
-        <div className="tablet:order-1">
+        <div className=" flex-1 tablet:order-1">
           <KakaoMap />
         </div>
       </div>
