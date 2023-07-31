@@ -61,7 +61,7 @@ const selectBoxOption = [
 const PlaceList = () => {
   const { control } = useForm({ defaultValues: { select: "최신 등록순" } });
   return (
-    <div className="w-full max-w-[490px]  bg-white rounded-[10px] pb-[20px]">
+    <div className="w-full max-w-[490px] tablet:max-w-full mobile:max-w-full bg-white rounded-[10px] pb-[20px] tablet:rounded-none mobile:rounded-none">
       <div className="justify-between px-[25px] py-[21.5px]">
         <div className="text-regular font-semibold leading-[21px] text-black">
           응원 장소 찾기

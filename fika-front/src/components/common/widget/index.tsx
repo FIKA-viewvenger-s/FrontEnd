@@ -32,7 +32,7 @@ const Banner = () => {
   return (
     <>
       {/* {showWidget && ( */}
-      <div className=" relative bg-blue-primary w-256 mt-19.5 mb-2.5 py-5 rounded-2.5">
+      <div className=" relative bg-blue-primary w-256 mt-19.5 mb-2.5 py-5 rounded-2.5 tablet:w-full mobile:w-full tablet:rounded-none mobile:rounded-none">
         <ul className="flex items-center justify-between ml-2.5 w-256">
           <div className="flex items-center h-20">
             {/* <MapMarker /> */}
