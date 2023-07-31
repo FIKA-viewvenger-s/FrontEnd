@@ -28,9 +28,9 @@ const HometownPub = () => {
     <div>
       <Widget />
       <MainBoard />
-      <div className="flex justify-between gap-11">
+      <div className="flex justify-between gap-11 flex-wrap tablet:w-full mobile:w-full">
         <PlaceList />
-        <div className="flex flex-col">
+        <div className="flex flex-col w-[490px] tablet:w-full mobile:w-full">
           <AssemblePlace />
           <KakaoMap />
         </div>

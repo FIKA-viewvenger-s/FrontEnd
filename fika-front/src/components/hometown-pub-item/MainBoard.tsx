@@ -25,10 +25,12 @@ const MainBoard = () => {
   //   setCurrentMonths((prevMonths) => addMonths(prevMonths, 1));
   // };
 
+  const [selectDate, setSelectDate] = useState(new Date());
+
   return (
     <div
       className={clsx(
-        "w-full bg-white rounded-2.5 px-6 mb-5",
+        "w-full bg-white rounded-2.5 px-6 mb-5 tablet:rounded-none mobile:rounded-none",
         showBoard ? "pb-7.5 pt-5 " : "py-5"
       )}
     >
@@ -40,7 +42,7 @@ const MainBoard = () => {
       >
         <div className="text-heading600">경기 일정</div>
         <div className="font-bold text-body500 text-black">
-          {format(new Date(), "yyyy.LL")}
+          {format(selectDate, "yyyy.LL")}
         </div>
 
         <button
@@ -53,7 +55,10 @@ const MainBoard = () => {
 
       {showBoard && (
         <>
-          <WeeklyCalendar />
+          <WeeklyCalendar
+            selectDate={selectDate}
+            setSelectDate={setSelectDate}
+          />
 
           <SoccerTeamSelection />
 
@@ -63,18 +68,18 @@ const MainBoard = () => {
                 key={item}
                 className={clsx("py-2 text-gray-70 font-medium text-[15px] ")}
               >
-                <div className="flex justify-between">
+                <div className="flex justify-between mobile:justify-start mobile:block flex-wrap">
                   <div className="flex items-center">
                     <div className="px-4 py-3">00:00</div>
 
                     <div>{item}</div>
                   </div>
-                  <div className="flex items-center">
-                    {item !== "종료" ? (
+                  <div className="flex items-center flex-wrap mobile:block mobile:border-b mobile:border-b-gray200 mobile:pb-4.25">
+                    {item !== "종료" && (
                       <Link
                         href={`hometown-pub/recruiting/${48293}`}
                         className={clsx(
-                          "bg-gray-10 px-4 py-[7px] border rounded-[5px]",
+                          "bg-gray-10 px-4 py-[7px] border rounded-[5px] mobile:hidden",
                           item === "경기중"
                             ? "text-red-500 border-red-500"
                             : "text-black border-black"
@@ -84,45 +89,66 @@ const MainBoard = () => {
                           ? "응원 중인 장소 2곳"
                           : "응원 예정 장소 1곳"}
                       </Link>
-                    ) : (
-                      <div className="w-[146px]" />
                     )}
-                    <div className="flex gap-2.5 items-center mr-5">
-                      <div className="px-2.5">팀 이름</div>
-                      <Image
-                        src="/assets/images/logo_1.jpg"
-                        alt="logo1"
-                        width={26}
-                        height={26}
-                      />
-                      <div>1</div>
+                    <div className="flex items-center mobile:justify-between mr-5 mobile:mr-0 flex-wrap mobile:mb-2">
+                      <div className="flex gap-2.5 items-center">
+                        <div className="px-2.5 mobile:hidden">팀 이름</div>
+                        <Image
+                          src="/assets/images/logo_1.jpg"
+                          alt="logo1"
+                          width={26}
+                          height={26}
+                        />
+                        <div className="px-2.5 hidden mobile:block">
+                          팀 이름
+                        </div>
+                        <div>1</div>
+                      </div>
+                      {item !== "종료" && (
+                        <Link
+                          href={`hometown-pub/recruiting/${48293}`}
+                          className={clsx(
+                            "hidden bg-gray-10 px-4 py-[7px] border rounded-[5px] mobile:block ",
+                            item === "경기중"
+                              ? "text-red-500 border-red-500"
+                              : "text-black border-black"
+                          )}
+                        >
+                          {item === "경기중"
+                            ? "모임 중인 장소 2곳"
+                            : "모임 예정 장소 1곳"}
+                        </Link>
+                      )}
                     </div>
-                    <div className="flex gap-2.5 items-center ml-5">
-                      <div>1</div>
-                      <Image
-                        src="/assets/images/logo_2.jpg"
-                        alt="logo2"
-                        width={26}
-                        height={26}
-                      />
-                      <div className="px-2.5">팀 이름</div>
+                    <div className="flex items-center mobile:justify-between ml-5 mobile:ml-0">
+                      <div className="flex gap-2.5 items-center">
+                        <div className="mobile:hidden">1</div>
+                        <Image
+                          src="/assets/images/logo_2.jpg"
+                          alt="logo2"
+                          width={26}
+                          height={26}
+                        />
+                        <div className="px-2.5">팀 이름</div>
+                        <div className="hidden mobile:block">1</div>
+                      </div>
+                      {item !== "종료" ? (
+                        <button
+                          className={clsx(
+                            "bg-gray-10 px-4 py-[7px] border rounded-[5px] mobile:",
+                            item === "경기중"
+                              ? "text-red-500 border-red-500"
+                              : "text-black border-black"
+                          )}
+                        >
+                          {item === "경기중"
+                            ? "모임 중인 장소 2곳"
+                            : "모임 예정 장소 1곳"}
+                        </button>
+                      ) : (
+                        <div className="w-[146px]" />
+                      )}
                     </div>
-                    {item !== "종료" ? (
-                      <button
-                        className={clsx(
-                          "bg-gray-10 px-4 py-[7px] border rounded-[5px]",
-                          item === "경기중"
-                            ? "text-red-500 border-red-500"
-                            : "text-black border-black"
-                        )}
-                      >
-                        {item === "경기중"
-                          ? "응원 중인 장소 2곳"
-                          : "응원 예정 장소 1곳"}
-                      </button>
-                    ) : (
-                      <div className="w-[146px]" />
-                    )}
                   </div>
                   {/* {item === "경기전" ? (
                     <div className="px-4 rounded-full border-black border flex justify-center items-center">

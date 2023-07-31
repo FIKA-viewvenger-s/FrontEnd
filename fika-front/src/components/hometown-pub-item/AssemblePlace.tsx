@@ -104,7 +104,7 @@ const AssemblePlace = () => {
   );
 
   return (
-    <div className="w-[490px] bg-white rounded-[10px] px-[25px] mb-[20px]">
+    <div className="w-full bg-white rounded-[10px] px-[25px] mb-[20px] tablet:rounded-none mobile:rounded-none">
       <div className="flex justify-between  py-[21.5px]">
         <div className=" text-heading600">내가 참여 예정인 장소</div>
         <button

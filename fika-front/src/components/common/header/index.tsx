@@ -27,12 +27,12 @@ const Header: FC<HeaderProps> = ({ title, children, isNew, isSearch }) => {
   return (
     <header
       className={clsx(
-        "w-full bg-white fixed z-[999]",
+        "w-full bg-white fixed z-[999] ",
         isNew && " border-b border-[rgb(239, 239, 239)] border-solid"
       )}
     >
       <div className=" w-full shadow-md">
-        <div className="w-256 flex mx-auto justify-between py-[14px] px-[25px] items-center">
+        <div className="w-256 flex mx-auto justify-between py-[14px] px-[25px] items-center tablet:w-full mobile:w-full">
           <div className="text-center text-gray-100 text-[18px] font-bold">
             {title}
           </div>
@@ -44,8 +44,8 @@ const Header: FC<HeaderProps> = ({ title, children, isNew, isSearch }) => {
         </div>
       </div>
       {isSearch && (
-        <div className="flex w-256  m-auto ">
-          <div className="text-black w-full max-w-192.5 py-2.5 pl-6 pr-16.25">
+        <div className="flex w-256  m-auto tablet:w-full mobile:w-full ">
+          <div className="text-black w-full max-w-192.5 py-2.5 pl-6 pr-16.25 mobile:pr-6">
             <Input
               name="search"
               fullWidth
@@ -55,7 +55,7 @@ const Header: FC<HeaderProps> = ({ title, children, isNew, isSearch }) => {
             />
           </div>
           <button
-            className="text-blue-primary w-35 text-medium flex items-center justify-center cursor-pointer"
+            className="text-blue-primary w-35 text-medium flex items-center justify-center cursor-pointer mobile:hidden"
             onClick={() => push("/hometown-pub/new-assemble")}
           >
             <Plus fill="#6172EE" />
