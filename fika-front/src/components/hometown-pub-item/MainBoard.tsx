@@ -114,7 +114,8 @@ const MainBoard = () => {
                         <div className="px-2.5">팀 이름</div>
                       </div>
                       {item !== "종료" ? (
-                        <button
+                        <Link
+                          href={`hometown-pub/recruiting/${48293}`}
                           className={clsx(
                             "bg-gray-10 px-4 py-[7px] border rounded-[5px] mobile:",
                             item === "경기중"
@@ -125,7 +126,7 @@ const MainBoard = () => {
                           {item === "경기중"
                             ? "모임 중인 장소 2곳"
                             : "모임 예정 장소 1곳"}
-                        </button>
+                        </Link>
                       ) : (
                         <div className="w-[146px]" />
                       )}

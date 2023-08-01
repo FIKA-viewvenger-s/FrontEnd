@@ -6,9 +6,8 @@ import clsx from "clsx";
 
 const breakPoints = [
   { width: 420, itemsToShow: 3 },
-  { width: 800 - 63, itemsToShow: 5 },
-  { width: 1023, itemsToShow: 6 },
-  { width: 1204, itemsToShow: 7 },
+  { width: 600, itemsToShow: 5 },
+  { width: 800, itemsToShow: 7 },
 ];
 
 interface WeeklyCalendarProps {

@@ -7,20 +7,17 @@ import type { ReactNode } from "react";
 import { useState } from "react";
 import queryClientConfig from "utils/queryClientConfig";
 import { CustomAppProps } from "src/types";
-import Button from "src/ui/Button";
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import { RecoilRoot } from "recoil";
 
 const noop = (page: ReactNode) => page;
 
 const App = ({ Component, pageProps, router }: CustomAppProps) => {
   const [queryClient] = useState(() => new QueryClient(queryClientConfig));
   const getLayout = Component.getLayout || noop;
+
+  if (process.env.NEXT_PUBLIC_ENV === "LOCAL") {
+    require("../mocks");
+  }
 
   return (
     <RecoilRoot>
