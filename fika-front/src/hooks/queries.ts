@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 // import { useRouter } from "next/router"
-import { loginAPI } from "..";
+import { loginAPI } from "../api";
 import { useRouter } from "next/router";
 
 export const useUserInfo = (code: string) => {
