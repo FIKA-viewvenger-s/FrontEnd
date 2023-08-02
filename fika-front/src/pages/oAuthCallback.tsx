@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useUserInfo } from "src/api/hooks/query";
+import { useUserInfo } from "src/hooks/queries";
 
 const OAuthCallback = () => {
   const { query } = useRouter();
