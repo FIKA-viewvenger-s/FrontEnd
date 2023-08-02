@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Header from "src/components/common/header";
 import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
 import AssemblePlace from "src/components/hometown-pub-item/AssemblePlace";
@@ -8,8 +8,6 @@ import MainBoard from "src/components/hometown-pub-item/MainBoard";
 import { useRouter } from "next/router";
 import { useForm, useWatch } from "react-hook-form";
 
-/** NOTE: 다른페이지는 inner 사이즈가 1400px인데 동네 축구펍 페이지만 1024px로 작업 되어있음, why? */
-
 const HometownPub = () => {
   const { push } = useRouter();
 
@@ -17,12 +15,6 @@ const HometownPub = () => {
     defaultValues: { search: "" },
   });
   const asd = useWatch({ name: "search", control });
-
-  useEffect(() => {
-    fetch("/game")
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
 
   return (
     <div>

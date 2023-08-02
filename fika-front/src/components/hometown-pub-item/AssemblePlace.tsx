@@ -5,93 +5,20 @@ import { useState } from "react";
 import clsx from "clsx";
 import Chevrondown from "../../ui/icon/Chevrondown";
 import Carousel from "react-elastic-carousel";
-
-import placeImg from "../../assets/images/img.png";
-import profile01 from "../../assets/images/profile01.jpg";
-import profile02 from "../../assets/images/profile02.jpg";
-import profile03 from "../../assets/images/profile03.jpg";
-import profile04 from "../../assets/images/profile04.jpg";
-import Link from "next/link";
-import { StaticImageData } from "next/image";
-
-interface PlaceItem {
-  id: number;
-  placeImg: StaticImageData;
-  title: string;
-  schedule: string;
-  place: string;
-  location: string;
-  profileImg: StaticImageData[];
-  tag: string[];
-  Participants: string;
-  maxParticipants: string;
-  URL: string;
-}
-
-const places: PlaceItem[] = [
-  {
-    id: 1,
-    placeImg: placeImg,
-    title: "모임 제목",
-    schedule: "2월 27일 오후 10시(토)",
-    place: "가게이름",
-    location: "위치",
-    profileImg: [profile01, profile02, profile03, profile04],
-    tag: ["태그1", "태그2", "태그3"],
-    Participants: "12",
-    maxParticipants: "30",
-    URL: "hometown-pub/chatroom/111",
-  },
-  {
-    id: 2,
-    placeImg: placeImg,
-    title: "모임 제목",
-    schedule: "2월 27일 오후 10시(토)",
-    place: "가게이름",
-    location: "위치",
-    profileImg: [profile01, profile02, profile03, profile04],
-    tag: ["태그1", "태그2", "태그3"],
-    Participants: "12",
-    maxParticipants: "30",
-    URL: "hometown-pub/chatroom/111",
-  },
-  {
-    id: 3,
-    placeImg: placeImg,
-    title: "모임 제목",
-    schedule: "2월 27일 오후 10시(토)",
-    place: "가게이름",
-    location: "위치",
-    profileImg: [profile01, profile02, profile03, profile04],
-    tag: ["태그1", "태그2", "태그3"],
-    Participants: "12",
-    maxParticipants: "30",
-    URL: "hometown-pub/chatroom/111",
-  },
-  {
-    id: 4,
-    placeImg: placeImg,
-    title: "모임 제목",
-    schedule: "2월 27일 오후 10시(토)",
-    place: "가게이름",
-    location: "위치",
-    profileImg: [profile01, profile02, profile03, profile04],
-    tag: ["태그1", "태그2", "태그3"],
-    Participants: "12",
-    maxParticipants: "30",
-    URL: "hometown-pub/chatroom/111",
-  },
-];
+import { useGetAssembles, useGetMyAssembles } from "src/hooks/queries";
+import { AssemblesType } from "src/types/homeTownPup";
 
 const AssemblePlace = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const { data = [], status, error } = useGetMyAssembles();
 
   const toggleAccordion = () => {
     setIsExpanded(!isExpanded);
   };
 
-  const groupedPlaces: PlaceItem[][] = places.reduce(
-    (acc: PlaceItem[][], place: PlaceItem, index: number) => {
+  const groupedPlaces: AssemblesType[][] = data.reduce(
+    (acc: AssemblesType[][], place: AssemblesType, index: number) => {
       if (index % 2 === 0) {
         acc.push([place]);
       } else {
@@ -102,7 +29,6 @@ const AssemblePlace = () => {
     },
     []
   );
-
   return (
     <div className="w-full bg-white rounded-[10px] px-[25px] mb-[20px] tablet:rounded-none mobile:rounded-none">
       <div className="flex justify-between  py-[21.5px]">
@@ -123,7 +49,7 @@ const AssemblePlace = () => {
           isExpanded && "accordion-is-expanded"
         )}
       >
-        {!places && (
+        {!data && (
           <div className="text-center py-[13px] px-[20px]">
             <p className="text-[15px font-medium leading-[1.5] pb-[19px]">
               참여 예정인 장소가 없습니다.
@@ -143,8 +69,9 @@ const AssemblePlace = () => {
               {group.map((item) => (
                 <AssemblePlaceItem
                   {...item}
-                  key={item.id}
                   buttonValue="채팅방 입장"
+                  key={item.assmId}
+                  URL={"/hometown-pub/chatroom/312"}
                 />
               ))}
             </div>

@@ -1,36 +1,43 @@
 import { FC } from "react";
 import Calendar from "src/ui/icon/Calendar";
 import Location from "src/ui/icon/Location";
-import Image, { StaticImageData } from "next/image";
 import clsx from "clsx";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
+type memberImges = {
+  memberNickNm: string;
+  memberImg: string;
+};
+
 interface propsItem {
-  placeImg: StaticImageData;
-  title: string;
-  schedule: string;
-  place?: string;
-  location: string;
-  profileImg: StaticImageData[];
-  tag: string[];
-  Participants: string;
-  maxParticipants: string;
+  assmId: number;
+  assmTitle: string;
+  assmDt: string;
+  assmAddr: string;
+  assmLat: number;
+  assmLon: number;
+  assmParticipant: number;
+  assmParticipantCnt: number;
+  placeImg: string;
+  memberImges: memberImges[];
   buttonValue: string;
+  tag: string[];
   URL?: string;
 }
 
 const AssemblePlaceItem: FC<propsItem> = ({
-  placeImg,
-  title,
-  schedule,
-  place,
-  location,
-  profileImg,
-  tag,
-  Participants,
-  maxParticipants,
+  assmId,
+  assmTitle,
+  assmDt,
+  assmAddr,
+  assmLat,
+  assmLon,
+  assmParticipant,
+  assmParticipantCnt,
+  memberImges,
   buttonValue,
+  placeImg,
+  tag,
   URL,
 }) => {
   const router = useRouter();
@@ -54,23 +61,23 @@ const AssemblePlaceItem: FC<propsItem> = ({
     >
       <div className="flex flex-col gap-[8px] grow">
         <div className="flex gap-[15px]">
-          <div className="max-w-[88px]">
-            <Image
+          <div className="max-w-[88px] aspect-square">
+            <img
               src={placeImg}
               alt="placeImg"
-              className="h-full rounded-[5px]"
+              className="h-full rounded-[5px] w-full"
             />
           </div>
           <div className="flex flex-col gap-[5px] leading-none">
-            <h3 className="text-body600">{title}</h3>
+            <h3 className="text-body600">{assmTitle}</h3>
             <p className="text-details600">
               <Calendar />
-              {schedule}
+              {assmDt}
             </p>
             {/* <p className="text-[14px] font-semibold">{place}</p> */}
             <p className="text-details600">
               <Location />
-              {location}
+              {assmAddr}
             </p>
             <p className="flex gap-[5px]">
               {!!tag &&
@@ -88,10 +95,10 @@ const AssemblePlaceItem: FC<propsItem> = ({
         <div className="flex justify-between border-t-[1px] py-[9px] border-[#efefef] items-center ">
           <div className="flex items-center">
             <div className="flex">
-              {!!profileImg &&
-                profileImg.map((img, idx) => (
-                  <Image
-                    src={img}
+              {!!memberImges &&
+                memberImges.map((img, idx) => (
+                  <img
+                    src={img.memberImg}
                     alt={`userprofile${idx}`}
                     className={clsx(
                       `rounded-[50px] object-cover w-[28px] h-[28px] border-2 border-white`
@@ -103,7 +110,7 @@ const AssemblePlaceItem: FC<propsItem> = ({
                 ))}
             </div>
             <div className=" text-details500">
-              {Participants}/{maxParticipants}명 참여
+              {assmParticipant}/{assmParticipantCnt}명 참여
             </div>
           </div>
           <button

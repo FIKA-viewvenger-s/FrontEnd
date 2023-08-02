@@ -28,3 +28,56 @@ export const gameData = {
     },
   ],
 };
+export const assemblesData = {
+  assemblies: [
+    {
+      assmId: 1,
+      assmTitle: "흥민이형 이겨라 !!",
+      assmDt: "2023/08/03",
+      assmAddr: "IZAKAYA",
+      assmLat: 13123,
+      assmLon: 123213,
+      assmParticipant: 5,
+      assmParticipantCnt: 3,
+      tag: ["축구", "펍", "술"],
+      placeImg:
+        "https://blog.kakaocdn.net/dn/NckE8/btruoMkhEkl/J2uDkkKmpH57NKgEPKyE4k/img.jpg",
+      memberImges: [
+        {
+          memberNickNm: "닉네임",
+          memberImg:
+            "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8LOK/image/Kx3PTA8nv2pHelBbVxvavOi0lK0.JPG",
+        },
+        {
+          memberNickNm: "닉네임",
+          memberImg:
+            "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8LOK/image/Kx3PTA8nv2pHelBbVxvavOi0lK0.JPG",
+        },
+      ],
+    },
+    {
+      assmId: 2,
+      assmTitle: "같이 축구봐요",
+      assmDt: "2023/08/12",
+      assmAddr: "인쌩맥주",
+      assmLat: 13123,
+      assmLon: 123213,
+      assmParticipant: 5,
+      assmParticipantCnt: 3,
+      tag: ["축구", "맥주", "친목"],
+      placeImg: "https://t1.daumcdn.net/cfile/tistory/999B5A3E5A74929815",
+      memberImges: [
+        {
+          memberNickNm: "닉네임2",
+          memberImg:
+            "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8LOK/image/Kx3PTA8nv2pHelBbVxvavOi0lK0.JPG",
+        },
+        {
+          memberNickNm: "닉네22임",
+          memberImg:
+            "https://img1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8LOK/image/Kx3PTA8nv2pHelBbVxvavOi0lK0.JPG",
+        },
+      ],
+    },
+  ],
+};
