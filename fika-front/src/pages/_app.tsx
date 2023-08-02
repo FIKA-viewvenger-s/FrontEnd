@@ -18,7 +18,6 @@ const App = ({ Component, pageProps, router }: CustomAppProps) => {
   if (process.env.NEXT_PUBLIC_ENV === "LOCAL") {
     require("../mocks");
   }
-
   return (
     <RecoilRoot>
       <DefaultSeo defaultTitle="" titleTemplate="" />

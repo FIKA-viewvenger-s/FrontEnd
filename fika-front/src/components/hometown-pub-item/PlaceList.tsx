@@ -1,47 +1,11 @@
 import Button from "src/ui/Button";
-import PlaceItem from "./AssemblePlaceItem";
-import CarouselTeamLogo from "./CarouselTeamLogo";
-import { useState } from "react";
-import clsx from "clsx";
-
-import placeImg from "../../assets/images/img.png";
-import profile01 from "../../assets/images/profile01.jpg";
-import profile02 from "../../assets/images/profile02.jpg";
-import profile03 from "../../assets/images/profile03.jpg";
-import profile04 from "../../assets/images/profile04.jpg";
-import Link from "next/link";
-import CountryFilter from "./SoccerTeamSelection";
+import AssemblePlaceItem from "./AssemblePlaceItem";
 import SoccerTeamSelection from "./SoccerTeamSelection";
 import Select from "src/ui/form/Select";
 import Chevrondown from "src/ui/icon/Chevrondown";
 import { useForm } from "react-hook-form";
-
-const placeItem = [
-  {
-    id: 1,
-    placeImg: placeImg,
-    title: "모임 제목",
-    schedule: "2월 27일 오후 10시(토)",
-    // place: "가게이름",
-    location: "위치",
-    profileImg: [profile01, profile02, profile03, profile04],
-    tag: ["태그1", "태그2", "태그3"],
-    Participants: "12",
-    maxParticipants: "30",
-  },
-  {
-    id: 2,
-    placeImg: placeImg,
-    title: "모임 제목",
-    schedule: "2월 27일 오후 10시(토)",
-    // place: "가게이름",
-    location: "위치",
-    profileImg: [profile01, profile02, profile03, profile04],
-    tag: ["태그1", "태그2", "태그3"],
-    Participants: "12",
-    maxParticipants: "30",
-  },
-];
+import { useGetAssembles } from "src/hooks/queries";
+import { AssemblesType } from "src/types/homeTownPup";
 
 const selectBoxOption = [
   {
@@ -60,6 +24,11 @@ const selectBoxOption = [
 
 const PlaceList = () => {
   const { control } = useForm({ defaultValues: { select: "최신 등록순" } });
+
+  const { data, status, error } = useGetAssembles();
+
+  console.log(data);
+
   return (
     <div className="w-full max-w-[490px] tablet:max-w-full mobile:max-w-full bg-white rounded-[10px] pb-[20px] tablet:rounded-none mobile:rounded-none">
       <div className="justify-between px-[25px] py-[21.5px]">
@@ -76,7 +45,7 @@ const PlaceList = () => {
         </div>
       </div>
       <div className="h-[calc(172px*3.4)] max-h-[calc(172px*3.2)] overflow-y-auto">
-        {!placeItem && (
+        {!data && (
           <div className="text-center py-[13px] px-[20px]">
             <p className="text-[15px font-medium leading-[1.5] pb-[19px] text-black">
               참여 예정인 장소가 없습니다.
@@ -90,9 +59,13 @@ const PlaceList = () => {
             </Button>
           </div>
         )}
-        {placeItem &&
-          placeItem.map((item) => (
-            <PlaceItem {...item} buttonValue="참여하기" key={item.id} />
+        {data &&
+          data.map((item: AssemblesType) => (
+            <AssemblePlaceItem
+              {...item}
+              buttonValue="참여하기"
+              key={item.assmId}
+            />
           ))}
       </div>
     </div>
