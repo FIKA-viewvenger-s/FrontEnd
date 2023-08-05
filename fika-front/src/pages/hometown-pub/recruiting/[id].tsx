@@ -63,9 +63,9 @@ const Recruiting = () => {
               <Chevrondown width="12" height="12" />
             </div>
           </div>
-          {Array.from({ length: 4 }, (_, index) => (
+          {/* {Array.from({ length: 4 }, (_, index) => (
             <AssemblePlaceItem
-              placeImg={placeImg}
+              // placeImg={placeImg}
               title={"모임 제목"}
               schedule={"2월 27일 오후 10시(토)"}
               place={"가게이름"}
@@ -78,7 +78,7 @@ const Recruiting = () => {
               key={index}
               buttonValue="참여하기"
             />
-          ))}
+          ))} */}
         </div>
         <div className=" flex-1 tablet:order-1">
           <KakaoMap />
