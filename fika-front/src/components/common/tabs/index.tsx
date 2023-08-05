@@ -7,6 +7,8 @@ const getPathName = (item: string) => {
   switch (item) {
     case "홈":
       return "/";
+    case "동네 축구 모임":
+      return "/hometown-pub";
     case "LivePlay":
       return "/live-play";
     case "팀/선수 등록": //tab에 노출될 값
@@ -15,6 +17,8 @@ const getPathName = (item: string) => {
       return "/transfer-market";
     case "게임 매치":
       return "/game-match";
+    case "랭킹":
+      return "/ranking";
     case "커뮤니티":
       return "/community";
     default:
@@ -36,8 +40,8 @@ const Tabs: FC = () => {
               className={clsx(
                 "w-36 h-9",
                 route === getPathName(item)
-                  ? "text-tab-selection-color"
-                  : "text-white"
+                  ? " text-blue-primary font-bold"
+                  : "text-white font-medium"
               )}
               type="button"
               onClick={() => {

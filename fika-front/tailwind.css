@@ -8,11 +8,94 @@
   }
 
   body {
+    font-family: "Pretendard", sans-serif;
     letter-spacing: -0.3px;
-    @apply mx-auto h-full w-[1400px] overflow-y-scroll bg-white sm:bg-gray-800;
+    @apply mx-auto h-full  overflow-y-scroll bg-white sm:bg-gray-800;
+  }
+  main {
+    @apply max-w-[1024px] m-auto pt-[55px] pb-[16px];
+
+    color: #263038;
   }
 
   #__next {
     @apply min-h-full bg-main-bg-color;
   }
+}
+
+@layer components {
+  .WhiteRoundButton-width-1 {
+    @apply border border-black bg-white py-[11px] px-[13px] rounded-[80px] cursor-pointer;
+  }
+  .WhiteRoundButton-width-2 {
+    @apply border-2 border-black bg-white py-[11px] px-[13px] rounded-[80px] cursor-pointer;
+  }
+  .BlackRoundButton {
+    @apply border-2 border-black bg-[#263038] py-[11px] px-[13px] rounded-[80px] cursor-pointer;
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+  }
+  .accordion-is-expanded {
+    max-height: 1000px;
+    transition: 0.4s ease-in-out;
+    padding-bottom: 20px;
+  }
+
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src: local("Pretendard Bold"),
+    url("./public/font/Pretendard-Bold.woff2") format("woff2"),
+    url("./public/font/Pretendard-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src: local("Pretendard SemiBold"),
+    url("./public/font/Pretendard-SemiBold.woff2") format("woff2"),
+    url("./public/font/Pretendard-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src: local("Pretendard Medium"),
+    url("./public/font/Pretendard-Medium.woff2") format("woff2"),
+    url("./public/font/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src: local("Pretendard Regular"),
+    url("./public/font/Pretendard-Regular.woff2") format("woff2"),
+    url("./public/font/Pretendard-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-display: swap;
+  src: local("Pretendard Light"),
+    url("./public/font/Pretendard-Light.woff2") format("woff2"),
+    url("./public/font/Pretendard-Light.woff") format("woff");
 }

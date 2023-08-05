@@ -26,7 +26,7 @@ const Button: FC<ButtonProps> = (props) => {
         "w-full",
         className,
         // variantClassName,
-        disabled && "bg-gray-100 text-gray-300"
+        disabled && "bg-gray-100 text-gray-30"
       )}
       disabled={disabled}
       type="button"
