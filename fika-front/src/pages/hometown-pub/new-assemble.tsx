@@ -50,7 +50,7 @@ const NewAssemble = () => {
   };
 
   return (
-    <div className="w-200 m-auto">
+    <div className="w-200 m-auto mobile:w-96 tablet:w-158">
       <form
         className="text-black pb-28.75"
         onSubmit={handleSubmit((data) => {
@@ -58,7 +58,7 @@ const NewAssemble = () => {
           console.log(selectTeam);
         })}
       >
-        <div className="mb-5">
+        <div className="mb-5 ">
           <div className="flex items-center mt-5 mb-8">
             <div
               className="rotate-90 transform flex items-center justify-center cursor-pointer"
@@ -73,6 +73,7 @@ const NewAssemble = () => {
           <SoccerTeamSelection
             isTeamLogo
             handleChangeValue={handleChangeValue}
+            type="new"
           />
           <div className="text-details500 text-gray-70">
             모임 개설 후 응원팀은 변경할 수 없어요.
@@ -204,7 +205,7 @@ const NewAssemble = () => {
 
       <Button
         type="submit"
-        className="py-3.5 rounded-lg fixed w-200 bottom-4 text-white text-regular bg-blue-80"
+        className="py-3.5 rounded-lg fixed w-200 mobile:w-96 tablet:w-158 bottom-4 text-white text-regular bg-blue-80"
       >
         모임 등록하기
       </Button>
