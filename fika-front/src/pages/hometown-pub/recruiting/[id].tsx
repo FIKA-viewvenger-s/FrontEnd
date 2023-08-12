@@ -1,16 +1,8 @@
 import { ReactNode } from "react";
 import Header from "src/components/common/header";
 import KakaoMap from "src/components/hometown-pub-item/KakaoMap";
-import PlaceList from "src/components/hometown-pub-item/PlaceList";
 import { useRouter } from "next/router";
 import ChevronUp from "src/ui/icon/ChevronUp";
-import AssemblePlaceItem from "src/components/hometown-pub-item/AssemblePlaceItem";
-
-import placeImg from "../../../assets/images/img.png";
-import profile01 from "../../../assets/images/profile01.jpg";
-import profile02 from "../../../assets/images/profile02.jpg";
-import profile03 from "../../../assets/images/profile03.jpg";
-import profile04 from "../../../assets/images/profile04.jpg";
 import Chevrondown from "src/ui/icon/Chevrondown";
 import Select from "src/ui/form/Select";
 import { useForm } from "react-hook-form";
