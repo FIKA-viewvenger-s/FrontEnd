@@ -25,13 +25,13 @@
 
 @layer components {
   .WhiteRoundButton-width-1 {
-    @apply border border-black bg-white py-[11px] px-[13px] rounded-[80px] cursor-pointer;
+    @apply inline-block border border-black bg-white py-[11px] px-[13px] rounded-[80px] cursor-pointer;
   }
   .WhiteRoundButton-width-2 {
-    @apply border-2 border-black bg-white py-[11px] px-[13px] rounded-[80px] cursor-pointer;
+    @apply inline-block border-2 border-black bg-white py-[11px] px-[13px] rounded-[80px] cursor-pointer min-w-[140px];
   }
   .BlackRoundButton {
-    @apply border-2 border-black bg-[#263038] py-[11px] px-[13px] rounded-[80px] cursor-pointer;
+    @apply inline-block border-2 border-black bg-[#263038] py-[11px] px-[13px] rounded-[80px] cursor-pointer min-w-[140px];
   }
   .accordion-content {
     max-height: 0;

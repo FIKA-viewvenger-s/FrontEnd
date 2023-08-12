@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Chevrondown from "../../ui/icon/Chevrondown";
 import Carousel from "react-elastic-carousel";
 import { AssemblesType } from "src/types/homeTownPup";
+import Link from "next/link";
 
 interface AssemblePlaceProps {
   data: AssemblesType[];
@@ -62,12 +63,18 @@ const AssemblePlace: FC<AssemblePlaceProps> = ({
               참여 예정인 장소가 없습니다.
               <br /> 새로운 응원 장소를 만들거나 응원 장소를 찾아보세요.
             </p>
-            <Button className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 ">
+            <Link
+              href={"/hometown-pub/new-assemble"}
+              className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 "
+            >
               응원 장소 만들기
-            </Button>
-            <Button className="text-white font-bold text-[15px] leading-[18px] BlackRoundButton">
+            </Link>
+            <Link
+              href={"/hometown-pub"}
+              className="text-white font-bold text-[15px] leading-[18px] BlackRoundButton"
+            >
               모임 찾기
-            </Button>
+            </Link>
           </div>
         )}
         <Carousel itemsToShow={1}>

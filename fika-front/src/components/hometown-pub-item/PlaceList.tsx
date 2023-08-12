@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useGetAssembles } from "src/hooks/queries";
 import { AssemblesType } from "src/types/homeTownPup";
 import clsx from "clsx";
+import Link from "next/link";
 
 const selectBoxOption = [
   {
@@ -57,12 +58,18 @@ const PlaceList = () => {
               참여 예정인 장소가 없습니다.
               <br /> 새로운 응원 장소를 만들거나 응원 장소를 찾아보세요.
             </p>
-            <Button className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 text-black mb-2">
+            <Link
+              href={"/hometown-pub/new-assemble"}
+              className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 text-black mb-2"
+            >
               응원 장소 만들기
-            </Button>
-            <Button className=" font-bold text-[15px] leading-[18px] BlackRoundButton text-white">
+            </Link>
+            <Link
+              href={"/hometown-pub"}
+              className=" font-bold text-[15px] leading-[18px] BlackRoundButton text-white"
+            >
               모임 찾기
-            </Button>
+            </Link>
           </div>
         )}
         {data &&
