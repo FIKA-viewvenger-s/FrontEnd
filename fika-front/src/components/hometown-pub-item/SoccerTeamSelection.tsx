@@ -5,6 +5,7 @@ import CarouselTeamLogo from "./CarouselTeamLogo";
 interface SoccerTeamSelectionProps {
   isTeamLogo?: boolean;
   handleChangeValue?: (x: string) => void;
+  type?: string;
 }
 
 const overseasLeague = [
@@ -20,6 +21,7 @@ const domesticLeague = ["K리그1", "K리그2", "선택안함"];
 const SoccerTeamSelection: FC<SoccerTeamSelectionProps> = ({
   isTeamLogo,
   handleChangeValue,
+  type,
 }) => {
   const [selectCountry, setSelectCountry] = useState("domestic");
   const [selectTime, setSelectTime] = useState("전체");
@@ -106,7 +108,9 @@ const SoccerTeamSelection: FC<SoccerTeamSelectionProps> = ({
         </div>
       )}
 
-      {isTeamLogo && <CarouselTeamLogo handleChangeValue={handleChangeValue} />}
+      {isTeamLogo && (
+        <CarouselTeamLogo handleChangeValue={handleChangeValue} type={type} />
+      )}
     </>
   );
 };

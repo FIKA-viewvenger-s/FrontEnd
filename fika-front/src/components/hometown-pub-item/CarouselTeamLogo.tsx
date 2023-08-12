@@ -1,14 +1,17 @@
-import Button from "src/ui/Button";
 import clsx from "clsx";
 import React, { FC, useState } from "react";
-import ReactDOM from "react-dom";
 import Carousel from "react-elastic-carousel";
 
-const breakPoints = [
+const mainBreakPoints = [
   { width: 1, itemsToShow: 5 },
-  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+  { width: 500, itemsToShow: 6 },
+  { width: 630, itemsToShow: 7 },
   { width: 768, itemsToShow: 8 },
-  { width: 1204, itemsToShow: 11 },
+];
+const breakPoints = [
+  { width: 1, itemsToShow: 4 },
+  { width: 550, itemsToShow: 7 },
+  { width: 768, itemsToShow: 8 },
 ];
 
 const items = [
@@ -32,16 +35,20 @@ const items = [
 
 interface CarouselTeamLogoProps {
   handleChangeValue?: (x: string) => void;
+  type?: string;
 }
 
-const CarouselTeamLogo: FC<CarouselTeamLogoProps> = ({ handleChangeValue }) => {
+const CarouselTeamLogo: FC<CarouselTeamLogoProps> = ({
+  handleChangeValue,
+  type,
+}) => {
   const [teams, setTeams] = useState("");
 
   return (
     <div>
       <div>
         <Carousel
-          breakPoints={breakPoints}
+          breakPoints={type === "main" ? mainBreakPoints : breakPoints}
           pagination={false}
           itemPadding={[10, 5]}
         >

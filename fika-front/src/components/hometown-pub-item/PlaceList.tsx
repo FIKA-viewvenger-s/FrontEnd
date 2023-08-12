@@ -36,7 +36,7 @@ const PlaceList = () => {
           응원 장소 찾기
         </div>
       </div>
-      <SoccerTeamSelection isTeamLogo />
+      <SoccerTeamSelection isTeamLogo type="main" />
       <div className="flex justify-between text-caption text-[#828282] pb-2 px-[10px]">
         <span>모집 장소</span>
         <div className="flex items-center">
