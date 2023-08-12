@@ -47,6 +47,7 @@ const Header: FC<HeaderProps> = ({ title, children, isNew, isSearch }) => {
         <div className="flex w-256  m-auto tablet:w-full mobile:w-full ">
           <div className="text-black w-full max-w-192.5 py-2.5 pl-6 pr-16.25 mobile:pr-6">
             <Input
+              className="pl-12 pr-4"
               name="search"
               fullWidth
               rightIcon={<Search />}

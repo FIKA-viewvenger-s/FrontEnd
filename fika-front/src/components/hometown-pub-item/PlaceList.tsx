@@ -6,6 +6,7 @@ import Chevrondown from "src/ui/icon/Chevrondown";
 import { useForm } from "react-hook-form";
 import { useGetAssembles } from "src/hooks/queries";
 import { AssemblesType } from "src/types/homeTownPup";
+import clsx from "clsx";
 
 const selectBoxOption = [
   {
@@ -44,17 +45,22 @@ const PlaceList = () => {
           <Chevrondown width="12" height="12" />
         </div>
       </div>
-      <div className="h-[calc(172px*3.4)] max-h-[calc(172px*3.2)] overflow-y-auto">
+      <div
+        className={clsx(
+          "max-h-[calc(172px*3.2)] overflow-y-auto",
+          data && data.length === 0 && "px-9 py-20"
+        )}
+      >
         {!data && (
           <div className="text-center py-[13px] px-[20px]">
             <p className="text-[15px font-medium leading-[1.5] pb-[19px] text-black">
               참여 예정인 장소가 없습니다.
               <br /> 새로운 응원 장소를 만들거나 응원 장소를 찾아보세요.
             </p>
-            <Button className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 text-black">
+            <Button className="font-bold text-[15px] leading-[18px] mr-[7px] WhiteRoundButton-width-2 text-black mb-2">
               응원 장소 만들기
             </Button>
-            <Button className=" font-bold text-[15px] leading-[18px] BlackRoundButton text-black">
+            <Button className=" font-bold text-[15px] leading-[18px] BlackRoundButton text-white">
               모임 찾기
             </Button>
           </div>

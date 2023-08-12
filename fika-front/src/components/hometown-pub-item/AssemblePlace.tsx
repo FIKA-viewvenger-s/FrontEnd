@@ -1,17 +1,24 @@
-import React from "react";
+import React, { FC } from "react";
 import Button from "src/ui/Button";
 import AssemblePlaceItem from "./AssemblePlaceItem";
 import { useState } from "react";
 import clsx from "clsx";
 import Chevrondown from "../../ui/icon/Chevrondown";
 import Carousel from "react-elastic-carousel";
-import { useGetAssembles, useGetMyAssembles } from "src/hooks/queries";
 import { AssemblesType } from "src/types/homeTownPup";
 
-const AssemblePlace = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+interface AssemblePlaceProps {
+  data: AssemblesType[];
+  status: "error" | "success" | "loading" | "idle";
+  error: any;
+}
 
-  const { data = [], status, error } = useGetMyAssembles();
+const AssemblePlace: FC<AssemblePlaceProps> = ({
+  data = [],
+  status,
+  error,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleAccordion = () => {
     setIsExpanded(!isExpanded);
